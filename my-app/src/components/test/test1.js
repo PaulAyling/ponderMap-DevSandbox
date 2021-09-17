@@ -1,11 +1,10 @@
 import React from 'react'
-import Example_btn from '../sub_parts/example_btn'
-
+import Container_header from '../sub_parts/container_header'
 
 function Test1() {
     return (
         <div>
-            <Example_btn/>
+            <Container_header/>
         </div>
     )
 }

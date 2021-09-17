@@ -1,4 +1,5 @@
 import React from 'react'
+import ShowHide_btn from './showHide_Btn'
 
 
 function Container_header(props) {
@@ -20,7 +21,7 @@ function Container_header(props) {
             <div class="text-center font-extralight font-bold text-xl text-decoration: underline">
                { container_title } 
             </div>
-            {/* <FontAwesomeIcon className="ml-3 hover:text-blue-700" icon={faSortDown} /> */}
+            <ShowHide_btn/>
         </div>
     </header>
     )
