@@ -4,15 +4,17 @@ import { faSortDown, faSortUp } from '@fortawesome/free-solid-svg-icons'
 
 
 function ShowHide_btn() {
-  const element = <FontAwesomeIcon icon={faSortDown} />
-    const [togl, setTogl] = useState(false);
-    function increment() {
+  
+  // const element = <FontAwesomeIcon icon={faSortDown} />
+
+
+  const [togl, setTogl] = useState(false);
+  function increment() {
         setTogl(prevState => !prevState);
     }
   return (
-    <button onclick={increment} >
-        <FontAwesomeIcon 
-            icon={togl ? faSortDown : faSortUp} className="ml-3 hover:text-blue-500"/>
+    <button onClick={increment} >
+        <FontAwesomeIcon icon={togl ? faSortDown : faSortUp} className="ml-3 hover:text-blue-500"/>
     </button>
 
   );
