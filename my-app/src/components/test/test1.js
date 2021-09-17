@@ -1,11 +1,11 @@
 import React from 'react'
-import _Book from '../layout/_Book'
+import Example_btn from '../sub_parts/example_btn'
 
 
 function Test1() {
     return (
         <div>
-            <_Book/>
+            <Example_btn/>
         </div>
     )
 }

@@ -1,6 +1,5 @@
 import React from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSortDown } from '@fortawesome/free-solid-svg-icons'
+
 
 function Container_header(props) {
     // Declare params
@@ -9,7 +8,7 @@ function Container_header(props) {
     const container_outerStyle = 'flex flex-row justify-between p-2 bg-black text-white'
     const container_title = 'A Sample Title'
     // [container_name,container_name_super,container_outerStyle,container_title] = props
-    const element = <FontAwesomeIcon icon={faSortDown} />
+    // const element = <FontAwesomeIcon icon={faSortDown} />
     // rotate-180
     return (
         <header title={container_name} class={container_outerStyle} >
@@ -21,7 +20,7 @@ function Container_header(props) {
             <div class="text-center font-extralight font-bold text-xl text-decoration: underline">
                { container_title } 
             </div>
-            <FontAwesomeIcon className="ml-3" icon={faSortDown} />
+            {/* <FontAwesomeIcon className="ml-3 hover:text-blue-700" icon={faSortDown} /> */}
         </div>
     </header>
     )
