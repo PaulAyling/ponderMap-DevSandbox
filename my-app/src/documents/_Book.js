@@ -1,20 +1,15 @@
 import React from 'react'
-import Container_header from '../sub_parts/container_header'
-
-
+import Header from '../documents/layout/Header'
 
 function _Book() {
-    // Declare params
-    const container_name = '_Chapter'
-    const container_name_super = 'container'
-    const container_outerStyle = 'flex flex-row justify-between p-2 bg-black text-white'
-    const container_title = 'A Sample Title'
+    const container_presets = {
+        'container_name':'_Chapter',  
+        'container_name_super':'container',    
+        'container_outerStyle':'flex flex-row justify-between p-2 bg-black text-white',
+        'btn_add_child':false}
     return (
-        <Container_header
-        container_name = {container_name}
-        container_name_super = {container_name_super}
-        container_outerStyle = {container_outerStyle}
-        container_title = {container_title}
+        <Header
+        container_presets={container_presets}
         />
         
     )
