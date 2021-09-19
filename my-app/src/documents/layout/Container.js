@@ -2,8 +2,6 @@ import React ,{ useState }from 'react'
 import Header from '../layout/Header'
 import Body from './Body';
 
-
-
 function Container(props) {
     const [togl, setTogl] = useState(false);
 
@@ -18,7 +16,7 @@ function Container(props) {
         togl = {togl}
         
         />
-        {togl ? '': <Body /> }
+        {togl ?  <Body /> : '' }
 
     </article>
         
