@@ -1,5 +1,6 @@
 import React ,{ useState }from 'react'
 import Header from '../layout/Header'
+import Body from './Body';
 
 
 
@@ -10,16 +11,16 @@ function Container(props) {
         console.log('Ran from container.js')
         setTogl(prevState => !prevState);
       }
-    return (<section>
+    return (<article>
         <Header
         container_presets={props.container_presets}
         show_hide = {show_hide}
         togl = {togl}
         
         />
-        {togl ? 'hello' :''}
+        {togl ? '': <Body /> }
 
-    </section>
+    </article>
         
     )
 }
