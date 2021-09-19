@@ -9,7 +9,7 @@ function Container(props) {
         console.log('Ran from container.js')
         setTogl(prevState => !prevState);
       }
-    return (<article>
+    return (<article className='p-1'>
         <Header
         container_presets={props.container_presets}
         show_hide = {show_hide}

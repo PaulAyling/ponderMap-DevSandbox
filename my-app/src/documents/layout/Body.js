@@ -6,8 +6,8 @@ function Body(props) {
 
     return (
         <div className="flex flex-col border-black border-2 p-1 w-full">
-            <div className = "h-64  bg-cover" style={{ 
-      backgroundImage: `url("https://loremflickr.com/640/360")` 
+            <div className = "h-80 bg-cover" style={{ 
+      backgroundImage: `url("https://picsum.photos/800")` 
     }}></div>
             <div className="p-2">
             {container_notes}
