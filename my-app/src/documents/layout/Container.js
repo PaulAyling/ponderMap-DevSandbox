@@ -16,7 +16,7 @@ function Container(props) {
         togl = {togl}
         
         />
-        {togl ?  <Body /> : '' }
+        {togl ?  <Body container_presets={props.container_presets }/> : '' }
        
 
     </article>
