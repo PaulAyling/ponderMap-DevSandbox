@@ -9,10 +9,10 @@ function Header(props) {
     const container_title =  props.container_presets.container_title
 
     return (
-        <header title={container_name} class={container_outerStyle} >
+        <header title={container_name} className={container_outerStyle} >
         <div className="flex flex-row">
-            <div className="font-bold text-gray-200 text-left uppercase">{container_name}</div>
-            <div className = "text-xs pl-3 text-gray-200">{container_name_super}</div>
+            <div className="font-bold text-gray-200 text-left text-xs uppercase">{container_name}</div>
+            {/* <div className = "text-xs pl-3 text-gray-200">{container_name_super}</div> */}
         </div>
         <div title="title section " className="flex flex-row ">
             <div className="text-center font-extralight font-bold text-xl text-decoration: underline">
