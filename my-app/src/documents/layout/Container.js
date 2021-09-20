@@ -3,20 +3,20 @@ import Header from '../layout/Header'
 import Body from './Body';
 
 function Container(props) {
-    const [togl, setTogl] = useState(false);
+    const [showHide, setshowHide] = useState(false);
 
-    function show_hide() {
-        console.log('Ran from container.js')
-        setTogl(prevState => !prevState);
+    function togle_var(toglVar) {
+        console.log('show_hide ran')
+        toglVar(prevState => !prevState);
       }
     return (<article className='p-1'>
         <Header
         container_presets={props.container_presets}
-        show_hide = {show_hide}
-        togl = {togl}
+        togle_var = {togle_var}
+        showHide = {showHide}
         
         />
-        {togl ?  <Body container_presets={props.container_presets }/> : '' }
+        {showHide ?  <Body container_presets={props.container_presets }/> : '' }
        
 
     </article>
