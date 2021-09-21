@@ -1,14 +1,13 @@
-import React, { Fragment } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowsAlt } from '@fortawesome/free-solid-svg-icons'
 
-function Btn_dragHandle(props) {
+function BtnDragHandle(props) {
 
   return (
       <div >
-          <FontAwesomeIcon icon={faArrowsAlt} className="ml-3 hover:text-blue-500"/>
+          <FontAwesomeIcon icon={props.showHide ? faArrowsAlt :''} className="ml-3 hover:text-blue-500"/>
       </div>
 
   );
 }
-export default Btn_dragHandle
+export default BtnDragHandle

@@ -1,13 +1,11 @@
-import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSortDown, faSortUp } from '@fortawesome/free-solid-svg-icons'
 
 
 function Btn_ShowHide(props) {
-
   return (
-    <button onClick={props.show_hide} >
-        <FontAwesomeIcon icon={props.togl ? faSortDown : faSortUp} className="ml-3 hover:text-blue-500"/>
+    <button onClick={() => props.containerFunctions.showHide_tgl()} >
+        <FontAwesomeIcon icon={props.containerState.showHide ? faSortDown : faSortUp} className="ml-3 hover:text-blue-500"/>
     </button>
 
   );

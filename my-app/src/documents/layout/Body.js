@@ -1,8 +1,8 @@
 import React from 'react'
 
 function Body(props) {
-    const container_notes = props.container_presets.container_notes
-    const container_image = props.container_presets.container_image
+    const container_notes = props.container_data.container_notes
+    const container_image = props.container_data.container_image
     const image_style = {
         backgroundImage: 'url('+ container_image +')' 
       }

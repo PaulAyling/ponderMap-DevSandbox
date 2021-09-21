@@ -1,5 +1,5 @@
-import React from 'react'
 import BtnShowHide from '../furniture/buttons/Btn_showHide'
+import BtnDragHandle from '../furniture/buttons/Btn_dragHandle'
 
 function Header(props) {
     //Tidy up
@@ -9,14 +9,15 @@ function Header(props) {
 
     return (
         <header title={container_name} className={container_outerStyle} >
-        <div title="drag handle">
-
-        </div>
         <div title="Visit Site" className="flex flex-row flex-grow pl-2 justify-between">
-            <div className="text-center font-extralight font-bold text-xl text-decoration: underline">
-               {container_title } 
+            <div>
+                <BtnDragHandle containerFunctions = {props.containerFunctions}/>
+                <div className="text-center font-extralight font-bold text-xl text-decoration: underline">
+                {container_title } 
+                </div>
             </div>
-            <BtnShowHide togle_var = {props.togle_var} showHide = {props.showHide}/>
+            <BtnShowHide containerFunctions = {props.containerFunctions} containerState = {props.containerState}
+/>
         </div>
     </header>
     )
