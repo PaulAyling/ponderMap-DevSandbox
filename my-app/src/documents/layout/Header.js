@@ -10,8 +10,8 @@ function Header(props) {
     return (
         <header title={container_name} className={container_outerStyle} >
         <div title="Visit Site" className="flex flex-row flex-grow pl-2 justify-between">
-            <div>
-                <BtnDragHandle containerFunctions = {props.containerFunctions}/>
+            <div className='flex flex-row'>
+                <BtnDragHandle containerFunctions = {props.containerFunctions} containerState = {props.containerState}/>
                 <div className="text-center font-extralight font-bold text-xl text-decoration: underline">
                 {container_title } 
                 </div>

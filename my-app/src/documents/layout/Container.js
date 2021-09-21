@@ -1,11 +1,18 @@
 import  { useState }from 'react'
 import Header from '../layout/Header'
-import Body from './Body';
+import Body from '../layout/Body'
+
 
 function Container(props) {
-    const [showHide, setshowHide] = useState(false);
-    const [showDrag, setShowDrag] = useState(false);
+    const currentContainer = props.container_data.container_name
 
+    [drag, remove, edit, share] = props.container_data.Btn_visable
+
+
+
+    const [showHide, setshowHide] = useState(false);
+    // button defaults from config
+    const [showDrag, setShowDrag] = useState(false);
     const showHide_tgl = (prop) => {
         setshowHide(prevState => !prevState);
       }
@@ -21,18 +28,16 @@ function Container(props) {
         showDrag
     }
     
-    return (<article className='p-1'>
-        <Header
-        container_presets={props.container_data}
-        showHide = {showHide}
-        containerFunctions = {containerFunctions}
-        containerState = {containerState}
-        />
-        {showHide ?  <Body container_data={props.container_data }/> : '' }
-       
-
-    </article>
-        
+    return (
+        <article className='m-1'>
+            <Header
+            container_presets={props.container_data}
+            showHide = {showHide}
+            containerFunctions = {containerFunctions}
+            containerState = {containerState}
+            />
+            {showHide ?  <Body container_data={props.container_data }/> : '' }
+        </article>
     )
 }
 

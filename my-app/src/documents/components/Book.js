@@ -1,6 +1,6 @@
 import React from 'react'
 import Container from '../layout/Container'
-import { Btn_defaults, Style_defaults } from '../components/config'
+import { Btn_visable, Style_defaults } from '../components/config'
 
 function Book() {
     const container_data = {
@@ -13,8 +13,8 @@ function Book() {
         //Style
         'container_outerStyle':'flex flex-row justify-between p-2 bg-black text-white',
         //Settings
-        'btn_defaults':Btn_defaults.chapter,
-        'Style_defaults':Style_defaults
+        'Btn_visable':Btn_visable.chapter,
+        'Style_defaults':Style_defaults.chapter
     }
     return (
         <Container

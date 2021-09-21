@@ -1,10 +1,10 @@
-const Btn_defaults = {
+const Btn_visable = {
         'chapter':{
-                'move':'invisble',
-                'add':'invisble',
-                'remove':'invisble',
-                'edit':'invisble',
-                'share':'invisble'
+                'drag':false,
+                'add':false,
+                'remove':false,
+                'edit':false,
+                'share':false
         }
     }
 
@@ -13,4 +13,4 @@ const Style_defaults = {
                 'container_outerStyle':'flex flex-row justify-between p-2 bg-black text-white'
         }
 }
-export { Btn_defaults, Style_defaults } 
+export { Btn_visable, Style_defaults } 
