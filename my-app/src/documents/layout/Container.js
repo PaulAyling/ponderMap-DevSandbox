@@ -4,12 +4,6 @@ import Body from '../layout/Body'
 
 
 function Container(props) {
-    const currentContainer = props.container_data.container_name
-
-    [drag, remove, edit, share] = props.container_data.Btn_visable
-
-
-
     const [showHide, setshowHide] = useState(false);
     // button defaults from config
     const [showDrag, setShowDrag] = useState(false);
@@ -31,11 +25,12 @@ function Container(props) {
     return (
         <article className='m-1'>
             <Header
-            container_presets={props.container_data}
+            container_data={props.container_data}
             showHide = {showHide}
             containerFunctions = {containerFunctions}
             containerState = {containerState}
             />
+            {/* Alternates between body or children */}
             {showHide ?  <Body container_data={props.container_data }/> : '' }
         </article>
     )

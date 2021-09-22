@@ -2,8 +2,8 @@ const Btn_visable = {
         'chapter':{
                 'drag':false,
                 'add':false,
-                'remove':false,
-                'edit':false,
+                'delete':false,
+                'url':false,
                 'share':false
         }
     }

@@ -2,10 +2,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowsAlt } from '@fortawesome/free-solid-svg-icons'
 
 function BtnDragHandle(props) {
-
   return (
-      <div title="move item" >
-          <FontAwesomeIcon icon={props.containerState.showDrag ? faArrowsAlt :''} className="align-text-bottom mr-1 text-black visible hover:text-gray-300"/>
+      <div className = "align-bottom">
+          {props.container_data.Btn_visible.drag ? 
+          <FontAwesomeIcon title="move item" icon={faArrowsAlt} className="align-bottom mr-2 text-black visible hover:text-gray-300"/> 
+          :''}
       </div>
 
   );
