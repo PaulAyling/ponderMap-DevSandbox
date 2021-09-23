@@ -8,7 +8,7 @@ const users = {
     2:{
     'id':2,
     'name':'Nigel',
-    'documents':[2,1]
+    'documents':[2]
     },
 }
 

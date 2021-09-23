@@ -1,40 +1,26 @@
 import React from 'react'
-import { allMockups } from '../../data/mockup/allMockups'
+import { singleDocument } from '../../data/mockup/singleDocument'
 import {getCurDocIds, getCurDocMap, getCurComponents,getCurChildren} from '../../data/mockup/dataFunctions/render'
 import { Btn_visable, Style_defaults } from './config'
 
-import ContainerList from '../layout/ContainerList'
 
 function Paragraph() {
-    //create Document data
-    const [users,documents,documentMaps,components] = allMockups
+    console.log(singleDocument)
 
-    //From Login
-    const user = 1
-      
-    //From prop
-    const docId = 1
-    const curComponentId = 1
-    //Document Data
-    const docMap = documentMaps[docId]
-    const componentIds = docMap.all_component_ids
-    const docComponents = getCurComponents(componentIds,components)
-
-    //Outputs
-    const curComponent = docComponents[curComponentId]
-    const curChildren = getCurChildren(curComponentId, docComponents, docMap )
-
-    
-    const documentData = {
-      docMap,
-      docComponents
-    }
-    documentData.Btn_visible = Btn_visable[curComponent.container_name]
-    documentData.Style_defaults = Style_defaults[curComponent.container_name]
-    console.log('documentData:',documentData)
+    // //Outputs
+    // const curComponent = docComponents[curComponentId]
+    // const curChildren = getCurChildren(curComponentId, docComponents, docMap )
+    // const documentData = {
+    //   docMap,
+    //   docComponents
+    // }
+    // documentData.Btn_visible = Btn_visable[curComponent.container_name]
+    // documentData.Style_defaults = Style_defaults[curComponent.container_name]
+    // console.log('documentData:',documentData)
     return (
-        <ContainerList curComponentId={curComponentId} documentData={documentData}
-        />
+        // <ContainerList curComponentId={curComponentId} documentData={documentData}
+        // />
+        <div>placholder</div>
     )
 }
 

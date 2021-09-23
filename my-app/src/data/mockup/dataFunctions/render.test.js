@@ -1,5 +1,5 @@
 import { allComponents } from '../allComponents'
-import { documentMaps } from '../documentMaps'
+import { documentViews } from '../documentViews'
 import { users } from '../users'
 import {getCurDocIds, getCurDocMap, getCurComponents,getChildrenComponents, getCurLevel} from './render'
 
@@ -8,7 +8,7 @@ const docId = 1
 const componentId = 1
 // DATA FRO THE WHOLE DOCUMENT
 const userDocs = getCurDocIds(user,users)
-const curDocMap = getCurDocMap(docId, documentMaps)
+const curDocMap = getCurDocMap(docId, documentViews)
 const componentIds = curDocMap.all_component_ids
 const components = getCurComponents(componentIds,allComponents)
 
