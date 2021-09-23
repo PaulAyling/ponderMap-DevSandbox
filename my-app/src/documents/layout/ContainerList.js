@@ -1,28 +1,22 @@
 import React from 'react'
 import ChildEx from '../scratch/ChildEx'
+import {getCurDocIds, getCurDocMap, getCurComponents,getCurChildren} from '../../data/mockup/dataFunctions/main'
+import { Btn_visable, Style_defaults } from '../components/config'
 
 function ContainerList(props) {
-    const outer_style_container_list ='flex flex-col bg-red-500 border-black border-4 m-1 '
-    const prop_placholder = [
-        {            
-        'id' : 1,
-        'name' : 'Bike'
-        },
-        {            
-        'id' : 2,
-        'name' : 'Car'
-        },
-        {            
-        'id' : 3,
-        'name' : 'trike'
-        }
-    ]
-
-    var childList = prop_placholder.map(function(trans){
-        return <ChildEx key={trans.id} data={trans} />;
+    //Prepare data
+    const curComponent = props.documentData.docComponents[props.curComponentId]
+    const curChildren = getCurChildren(props.curComponentId, props.documentData.docComponents, props.documentData.docMap )
+    console.log('curComponent',curComponent)
+    console.log('curChildren',curChildren)
+    
+        
+    //Create Childist
+    var childList = curChildren.map(function(curChilds){
+        return <ChildEx key={curChilds.id} data={curChilds} />;
       })
 
-
+      
     return (
         <section className={outer_style_container_list}>
             header section of container list

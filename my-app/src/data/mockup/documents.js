@@ -7,13 +7,13 @@ const documents = {
     1:{
     'id':1,
     'created_by':1,
-    'created_on':2021-08-01,
+    'created_on':'2021-08-01',
     'Document_title':'Pauls first pondermap'
     },
     2:{
     'id':2,
     'created_by':2,
-    'created_on':2021-07-01,
+    'created_on':'2021-07-01',
     'Document_title':'Placeholder Title'
     }
 }

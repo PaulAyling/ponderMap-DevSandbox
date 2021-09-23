@@ -1,14 +1,12 @@
 import React from 'react'
-import Book from '../../documents/components/Book'
+import Paragraph from '../documents/components/Paragraph'
 
 function Test1() {
 
     return (
         <div>
             some text in test
-            <Book 
-            
-            
+            <Paragraph  
             />
         </div>
     )

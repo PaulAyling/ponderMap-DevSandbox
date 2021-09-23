@@ -1,7 +1,7 @@
 import { components } from '../components'
 import { documentMaps } from '../documentMaps'
 import { users } from '../user'
-import {getCurDocIds, getCurDocMap, getCurComponents,getCurChildren} from '../dataFunctions.js/main'
+import {getCurDocIds, getCurDocMap, getCurComponents,getCurChildren} from './main'
 
 const userId = 1
 const activeDocId = 1

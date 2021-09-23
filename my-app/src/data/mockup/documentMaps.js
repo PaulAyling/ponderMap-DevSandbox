@@ -1,8 +1,6 @@
 // Maps of every version of every document for any user
 // Maps show how all the components are linked together
 const documentMaps = 
-{
-    'versions':
     {
         1:{
         'all_component_ids':[1,2,3],
@@ -56,7 +54,7 @@ const documentMaps =
                }
            }, 
         },
-    }
-}    
+
+    }    
 
 export  { documentMaps }
