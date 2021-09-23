@@ -2,7 +2,7 @@
 import { users } from './users'
 import {documents } from './documents'
 import {documentMaps } from './documentMaps'
-import {components } from './components'
+import {components } from './allComponents'
 
 const allMockups = [users,documents,documentMaps,components]
 

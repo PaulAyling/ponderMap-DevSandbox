@@ -1,4 +1,8 @@
-/* HOW THIS WORKS
+/*
+FUNCTIONS USED TO RENDER THE PONDERMAP DOCUMENT
+
+
+ HOW THIS WORKS
 1. starting with a userId all docVerId can be retrieved using getDocIds
 A docVerId is a version of a document(1 doc has different docVerId, unique per user)
 
@@ -14,7 +18,7 @@ const getCurDocIds = (userId, user) =>{
 }
 //Get the document map that belongs to a given version_id
 const getCurDocMap = (docVerId,documents) =>{
-    return documents.versions[docVerId]
+    return documents[docVerId]
 }
 //Get all the components for an arrang of component_idsgiven 
 const getCurComponents = (componentIds,components) =>{
@@ -24,20 +28,24 @@ const getCurComponents = (componentIds,components) =>{
      }
      return res
 }
-
-//Get the component data for children of a given component_id
-const getCurChildren = (componentId,curComponents,curDocMap) =>{
-    const children_ids = curDocMap.component_hierachy[componentId].children
-    const componentList = curComponents
-    console.log('componentLIst', componentList)
-    
-    const getComponent = (num) =>{
-        return componentList[num]
-    }
-    const res = children_ids.map(getComponent)
-    return res
-
+//get the current level
+const getCurLevel = (componentId,documentMap) =>{
+    return documentMap.component_hierachy[componentId].level
 }
 
+const getChildrenComponents = (componentId, components, curDocMap) =>{
+    const getCurChildrenIds = (componentId,curDocMap) =>{
+        // console.log('componentId',componentId)
+        // console.log('documentMap',curDocMap.component_hierachy[componentId].children)
+        return curDocMap.component_hierachy[componentId].children
+    }
+    const childrenIds = getCurChildrenIds(componentId,curDocMap)
 
-export  { getCurDocIds, getCurDocMap, getCurComponents, getCurChildren }
+    const getComponent = (num) =>{
+        return components[num]
+     }
+    const res = childrenIds.map(getComponent)
+    return res
+}
+
+export  { getCurDocIds, getCurDocMap, getCurComponents, getCurLevel, getChildrenComponents}

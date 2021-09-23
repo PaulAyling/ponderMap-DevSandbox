@@ -1,5 +1,5 @@
 // All the components used in any version of any document created by any user
-const components = {
+const allComponents = {
     1:{
     'id':1,
     'title':'About Bicycles',
@@ -26,4 +26,4 @@ const components = {
     }
 } 
 
-export  { components}
+export  { allComponents}
