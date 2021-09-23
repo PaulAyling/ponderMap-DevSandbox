@@ -1,14 +1,21 @@
-import React from 'react'
-import ChildEx from '../scratch/ChildEx'
+import {getCurDocIds, getCurDocMap, getCurComponents,getChildrenComponents, getCurLevel} from '../../data/dataFunctions/render'
+
 
 
 function ContainerList(props) {
     //Prepare data
-    // const curComponent = props.documentData.docComponents[props.curComponentId]
-    // const curChildren = getCurChildren(props.curComponentId, props.documentData.docComponents, props.documentData.docMap )
-    // // console.log('curComponent',curComponent)
-    // // console.log('curChildren',curChildren)
-    // // console.log('style',props.documentData)
+    console.log('ID:',props.curComponentId)
+    console.log('Doc data:',props.singleDocument)
+    console.log('Doc data:',props.singleDocument.docComponents[props.curComponentId])
+
+
+    const componentId = props.curComponentId
+    const components = props.singleDocument.docComponents
+    const curComponent = props.singleDocument.docComponents[props.curComponentId]
+    const documentViews = props.singleDocument.documentView
+
+    const cur_component = props.singleDocument.docComponents[props.curComponentId]
+    // const childrenComponents = getChildrenComponents(props.curComponentId, components, curDocMap) 
     
         
     //Create Childist
@@ -19,7 +26,6 @@ function ContainerList(props) {
       
     return (
         <section className={'outer_style_container_list'}>
-            header section of container list
             {/* <div>{childList}</div> */}
         </section>
     )
