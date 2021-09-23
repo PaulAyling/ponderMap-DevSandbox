@@ -1,14 +1,15 @@
-const users = [
-    {
+// All the users for the application
+const users = {
+    1:{
     'id':1,
     'name':'Paul',
     'documents':[1]
     },
-    {
+    2:{
     'id':2,
     'name':'Nigel',
-    'documents':[1]
+    'documents':[2,1]
     },
-]
+}
 
 export { users }

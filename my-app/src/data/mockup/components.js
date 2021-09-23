@@ -1,7 +1,7 @@
+// All the components used in any version of any document created by any user
 const components = {
     1:{
     'id':1,
-    'level':'paragraph',
     'title':'About Bicycles',
     'url':'',
     'image_url':'',
@@ -10,7 +10,6 @@ const components = {
     },
     2:{
         'id':2,
-        'level':'word',
         'title':'Road Bikes',
         'url':'https://en.wikipedia.org/wiki/Road_bicycle',
         'image_url':'https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Look_795_30th_Anniversary_Dura-Ace_9100-Mavic_Custom_Build_%2830636542393%29.jpg/300px-Look_795_30th_Anniversary_Dura-Ace_9100-Mavic_Custom_Build_%2830636542393%29.jpg',
@@ -19,7 +18,6 @@ const components = {
     },
     3:{
         'id':3,
-        'level':'paragraph',
         'title':'MOuntain Bikes',
         'url':'https://en.wikipedia.org/wiki/Mountain_biking',
         'image_url':'https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/MtnBiking_SedonaMag.jpg/250px-MtnBiking_SedonaMag.jpg',
@@ -28,4 +26,4 @@ const components = {
     }
 } 
 
-export { components}
+export  { components}
