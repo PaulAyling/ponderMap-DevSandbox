@@ -1,11 +1,23 @@
 import  { useState }from 'react'
 import Header from '../layout/Header'
 import Body from '../layout/Body'
+import { Btn_visable, Style_defaults } from '../components/config'
+import { getCurLevel} from '../../data/dataFunctions/render'
+
+//THIS IS THE CONTAINER FOR THE HEADER/BODY of each link 
+//with buttons
 
 
 function Container(props) {
+    const containerData = props.container_data
+    const curComponentLevel = getCurLevel(containerData.id,props.documentView)
+    //Add button defaults
+    containerData.Btn_visible = Btn_visable[curComponentLevel]
+    containerData.Style_defaults = Style_defaults[curComponentLevel]
+
+
+    //SETUP STATE & STATE FUNCTION FOR BUTTON TOGGLES
     const [showHide, setshowHide] = useState(false);
-    // button defaults from config
     const [showDrag, setShowDrag] = useState(false);
     const showHide_tgl = (prop) => {
         setshowHide(prevState => !prevState);
@@ -22,16 +34,14 @@ function Container(props) {
         showDrag
     }
 
-    console.log('containerState',containerState)
     return (
         <article className='m-1'>
             <Header
-            container_data={props.container_data}
+            container_data={containerData}
             showHide = {showHide}
             containerFunctions = {containerFunctions}
             containerState = {containerState}
             />
-            {/* Alternates between body or children */}
             {showHide ?  <Body container_data={props.container_data }/> : '' }
         </article>
     )

@@ -5,7 +5,6 @@ function Test1() {
 
     return (
         <div>
-            some text in test
             <Paragraph  
             />
         </div>

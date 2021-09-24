@@ -18,10 +18,10 @@ const allComponents = {
     },
     3:{
         'id':3,
-        'title':'MOuntain Bikes',
+        'title':'Mountain Bikes',
         'url':'https://en.wikipedia.org/wiki/Mountain_biking',
         'image_url':'https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/MtnBiking_SedonaMag.jpg/250px-MtnBiking_SedonaMag.jpg',
-        'notes':'MOuntain bikeing is more fun',
+        'notes':'Mountain bikeing is more fun and very dangerous, and soo exckting!',
         'tags':['lesiure','sport','extreme']
     }
 } 

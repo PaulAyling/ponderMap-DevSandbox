@@ -1,34 +1,35 @@
 import {getCurDocIds, getCurDocMap, getCurComponents,getChildrenComponents, getCurLevel} from '../../data/dataFunctions/render'
 import ChildEx from '../scratch/ChildEx'
 import Container from '../layout/Container'
-import { Btn_visable, Style_defaults } from '../components/config'
-
 
 
 function ContainerList(props) {
     const componentId = props.curComponentId
     const components = props.singleDocument.docComponents
     const documentView = props.singleDocument.documentView
-    const curComponentLevel = getCurLevel(componentId,documentView)
 
-    //PROP DATA
-    const outer_style_container_list = 'outer_style_container_list'
-    const curComponent = props.singleDocument.docComponents[componentId]
+    //THIS LEVELS DATA
+    const containerData = components[componentId]
+
+    //CHILDREN DATA
     const curChildren = getChildrenComponents(componentId, components, documentView) 
-
-
-    //Add Button Defaults
-    curComponent.Btn_visible = Btn_visable[curComponentLevel]
-    curComponent.Style_defaults = Style_defaults[curComponentLevel]
-
     const childList = curChildren.map(function(curChilds){
-        return <ChildEx key={curChilds.id} data={curChilds} />;
+        return (
+        <Container 
+        //Container Specific
+        key={curChilds.id} container_data={curChilds} 
+        //All Doc data
+        components={components} documentView={documentView}/>
+        )
       })
-
-      
+ 
     return (
         <section className={'outer_style_container_list'}>
-            <Container container_data={curComponent}/>
+        <Container 
+        //Container Specific
+        key={componentId} container_data={containerData} 
+        //All Doc data
+        components={components} documentView={documentView}/>
             <div>{childList}</div>
         </section>
     )
