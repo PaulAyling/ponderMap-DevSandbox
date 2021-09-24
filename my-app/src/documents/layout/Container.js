@@ -15,7 +15,6 @@ function Container(props) {
     containerData.Btn_visible = Btn_visable[curComponentLevel]
     containerData.Style_defaults = Style_defaults[curComponentLevel]
 
-
     //SETUP STATE & STATE FUNCTION FOR BUTTON TOGGLES
     const [showHide, setshowHide] = useState(false);
     const [showDrag, setShowDrag] = useState(false);
@@ -37,7 +36,7 @@ function Container(props) {
     return (
         <article className='m-1'>
             <Header
-            container_data={containerData}
+            containerData={containerData}
             showHide = {showHide}
             containerFunctions = {containerFunctions}
             containerState = {containerState}

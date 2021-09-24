@@ -6,23 +6,24 @@ import BtnUrl from '../furniture/buttons/Btn_url'
 import BtnShare from '../furniture/buttons/Btn_share'
 
 function Header(props) {
-    console.log('props',props.container_data.title)
-    const container_name = props.container_data.container_name
-    const container_outerStyle = 'props.container_data.Style_defaults.container_outerStyle'
-    const container_title =  props.container_data.title
+    console.log('ZZ:containerData',props.containerData.Style_defaults.container_outerStyle)
+
+    const container_name = props.containerData.container_name
+    const container_outerStyle = props.containerData.Style_defaults.container_outerStyle
+    const container_title =  props.containerData.title
 
     return (
         <header title={container_name} className={container_outerStyle} >
         <div title="Visit Site" className="flex flex-row flex-grow pl-2 justify-between">
             <div className='flex flex-row'>
-                <BtnDragHandle containerFunctions = {props.containerFunctions} containerState = {props.containerState} container_data={props.container_data} />
+                <BtnDragHandle containerFunctions = {props.containerFunctions} containerState = {props.containerState} containerData={props.containerData} />
                 <div className="text-center font-extralight font-bold text-xl text-decoration: underline">
                 {container_title } 
                 </div>
-                <BtnAdd containerFunctions =    {props.containerFunctions} containerState = {props.containerState} container_data={props.container_data} />
-                <BtnDelete containerFunctions = {props.containerFunctions} containerState = {props.containerState} container_data={props.container_data} />
-                <BtnUrl containerFunctions =    {props.containerFunctions} containerState = {props.containerState} container_data={props.container_data} />
-                <BtnShare containerFunctions =  {props.containerFunctions} containerState = {props.containerState} container_data={props.container_data} />
+                <BtnAdd containerFunctions =    {props.containerFunctions} containerState = {props.containerState} containerData={props.containerData} />
+                <BtnDelete containerFunctions = {props.containerFunctions} containerState = {props.containerState} containerData={props.containerData} />
+                <BtnUrl containerFunctions =    {props.containerFunctions} containerState = {props.containerState} containerData={props.containerData} />
+                <BtnShare containerFunctions =  {props.containerFunctions} containerState = {props.containerState} containerData={props.containerData} />
             </div>
             <BtnShowHide containerFunctions = {props.containerFunctions} containerState = {props.containerState}
 />
