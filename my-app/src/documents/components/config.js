@@ -1,5 +1,12 @@
 const Btn_visable = {
-        'chapter':{
+        'paragraph':{
+                'drag':false,
+                'add':false,
+                'delete':false,
+                'url':false,
+                'share':false
+        },
+        'word':{
                 'drag':false,
                 'add':false,
                 'delete':false,

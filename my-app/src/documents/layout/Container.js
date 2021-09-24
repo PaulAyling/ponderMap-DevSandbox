@@ -21,9 +21,8 @@ function Container(props) {
         showHide,
         showDrag
     }
-    
 
-    
+    console.log('containerState',containerState)
     return (
         <article className='m-1'>
             <Header

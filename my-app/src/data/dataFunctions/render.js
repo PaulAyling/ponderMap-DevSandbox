@@ -29,8 +29,8 @@ const getCurComponents = (componentIds,components) =>{
      return res
 }
 //get the current level
-const getCurLevel = (componentId,documentMap) =>{
-    return documentMap.component_hierachy[componentId].level
+const getCurLevel = (componentId,documentView) =>{
+    return documentView.component_hierachy[componentId].level
 }
 
 const getChildrenComponents = (componentId, components, curDocMap) =>{
