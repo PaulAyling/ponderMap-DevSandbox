@@ -9,11 +9,11 @@ function Header(props) {
     console.log('ZZ:containerData',props.containerData.Style_defaults.container_outerStyle)
 
     const container_name = props.containerData.container_name
-    const container_outerStyle = props.containerData.Style_defaults.container_outerStyle
+    const headerOuterStyle = props.containerData.Style_defaults.header_outerStyle
     const container_title =  props.containerData.title
 
     return (
-        <header title={container_name} className={container_outerStyle} >
+        <header title={container_name} className={headerOuterStyle} >
         <div title="Visit Site" className="flex flex-row flex-grow pl-2 justify-between">
             <div className='flex flex-row'>
                 <BtnDragHandle containerFunctions = {props.containerFunctions} containerState = {props.containerState} containerData={props.containerData} />

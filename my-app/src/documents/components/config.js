@@ -17,10 +17,14 @@ const Btn_visable = {
 
 const Style_defaults = {
         'paragraph':{
-                'container_outerStyle':'rounded flex flex-row justify-between p-2 bg-gray-300 text-black'
+                'header_outerStyle':'rounded flex flex-row justify-between p-2 bg-gray-300 text-black',
+                'body_outerStyle':'flex flex-col border-black border-2 p-1 w-full',
+                
+                
         },
         'word':{
-                'container_outerStyle':'rounded ml-2 border-2 flex flex-row justify-between p-2 bg-white text-black'
+                'header_outerStyle':'ml-1 mr-1 flex flex-row justify-between  bg-white text-black',
+                'body_outerStyle':  'ml-1 p-1  flex flex-col border-red w-full',
         }
 }
 export { Btn_visable, Style_defaults } 

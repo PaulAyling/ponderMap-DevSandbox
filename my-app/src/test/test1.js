@@ -4,7 +4,7 @@ import Paragraph from '../documents/components/Paragraph'
 function Test1() {
 
     return (
-        <div>
+        <div className="w-1/3">
             <Paragraph  
             />
         </div>

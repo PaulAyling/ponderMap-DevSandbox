@@ -34,14 +34,14 @@ function Container(props) {
     }
 
     return (
-        <article className='m-1'>
+        <article className='m-1 bg-gray-300'>
             <Header
             containerData={containerData}
             showHide = {showHide}
             containerFunctions = {containerFunctions}
             containerState = {containerState}
             />
-            {showHide ?  <Body container_data={props.container_data }/> : '' }
+            {showHide ?  <Body containerData={containerData} /> : '' }
         </article>
     )
 }
