@@ -7,7 +7,7 @@ import BtnShare from '../furniture/buttons/Btn_share'
 
 function Header(props) {
     const container_name = props.container_data.container_name
-    const container_outerStyle = props.container_data.Style_defaults.container_outerStyle
+    const container_outerStyle = 'props.container_data.Style_defaults.container_outerStyle'
     const container_title =  props.container_data.container_title
 
     return (
