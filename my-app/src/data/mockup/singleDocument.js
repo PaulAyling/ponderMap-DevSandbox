@@ -9,14 +9,14 @@ import {getCurDocIds, getCurDocMap, getCurComponents,getChildrenComponents, getC
 const docId = 1 // user picks this document
 //Document Data
 const documentView = documentViews[docId]
-const componentIds = documentViews.all_component_ids
+const componentIds = documentView.all_component_ids
 console.log('componentIds',componentIds)
 console.log('allComponents',allComponents)
-// const docComponents = getCurComponents(componentIds,allComponents)
+const docComponents = getCurComponents(componentIds,allComponents)
 
 const singleDocument={
     documentView,
-    // docComponents
+    docComponents
 }
 
 export {singleDocument} 
