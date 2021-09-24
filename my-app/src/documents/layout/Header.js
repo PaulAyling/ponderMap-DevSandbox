@@ -6,9 +6,10 @@ import BtnUrl from '../furniture/buttons/Btn_url'
 import BtnShare from '../furniture/buttons/Btn_share'
 
 function Header(props) {
+    console.log('props',props.container_data.title)
     const container_name = props.container_data.container_name
     const container_outerStyle = 'props.container_data.Style_defaults.container_outerStyle'
-    const container_title =  props.container_data.container_title
+    const container_title =  props.container_data.title
 
     return (
         <header title={container_name} className={container_outerStyle} >

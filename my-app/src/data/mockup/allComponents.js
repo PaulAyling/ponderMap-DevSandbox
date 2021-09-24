@@ -4,7 +4,7 @@ const allComponents = {
     'id':1,
     'title':'About Bicycles',
     'url':'',
-    'image_url':'',
+    'image_url':'https://bikexchange.com/wp-content/uploads/2020/12/bikes1212-e1630349513789.png',
     'notes':'',
     'tags':['lesiure','sport']
     },
