@@ -42,15 +42,17 @@ function Container(props) {
         <article className='m-1 bg-gray-300'>
             <Header
             curContainerData={curContainerData}
-            showHide = {showHide}
+            //Button Management
             containerFunctions = {containerFunctions}
             containerState = {containerState}
+            showHide = {showHide}
             />
            
             {showHide ?  
             <Body   
-                    containerFunctions = {containerFunctions}
                     curContainerData={curContainerData} 
+                    containerFunctions = {containerFunctions}
+                    //Document data
                     components = {documentComponents}
                     documentView={documentView}/> : '' }
         </article>

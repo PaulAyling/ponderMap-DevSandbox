@@ -6,6 +6,7 @@ function Body(props) {
     //1. Content (If level = word)
     const [containerId, container_notes, container_image, bodyOuterStyle]  = props.curContainerData
     const curComponentLevel = getCurLevel(props.curContainerData.id,props.documentView)
+    console.log('curComponentLevel',curComponentLevel)
     const image_style = {
         backgroundImage: 'url('+ container_image +')' 
       }
