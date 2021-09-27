@@ -16,8 +16,6 @@ function Body(props) {
     const curChildren = getChildrenComponents(id, documentComponents, documentView) 
     
     const childList = curChildren.map(function(curChilds){
-        console.log('ch ids',curChilds.id)
-        console.log('curChilds',curChilds)
         return (
         <Container 
         //Container Specific
@@ -27,7 +25,7 @@ function Body(props) {
         )
         })
     return (
-    <div>{curComponentLevel == 'word' ?
+    <div>{curComponentLevel === 'word' ?
         <div className={bodyOuterStyle}>
             <div className = "h-80 bg-cover" style={image_style}></div>
             <div className="p-2">

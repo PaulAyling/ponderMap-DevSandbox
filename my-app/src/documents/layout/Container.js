@@ -20,7 +20,7 @@ function Container(props) {
         curContainerData.Style_defaults = Style_defaults[curComponentLevel]
 
 
-    //3. SETUP STATE & STATE FUNCTION FOR BUTTON TOGGLES
+    //2. SETUP STATE & STATE FUNCTION FOR BUTTON TOGGLES
     const [showHide, setshowHide] = useState(false);
     const [showDrag, setShowDrag] = useState(false);
     const showHide_tgl = (prop) => {
