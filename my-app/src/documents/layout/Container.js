@@ -2,8 +2,8 @@ import  { useState }from 'react'
 import Header from '../layout/Header'
 import Body from '../layout/Body'
 import { Btn_visable, Style_defaults } from '../components/config'
-import { getCurLevel,getChildrenComponents} from '../../data/dataFunctions/render'
-
+import { getCurLevel} from '../../data/dataFunctions/render'
+import { singleDocument } from '../../data/mockup/singleDocument'
 
 //THIS IS THE CONTAINER FOR THE HEADER/BODY of each link 
 //with buttons
@@ -12,7 +12,7 @@ import { getCurLevel,getChildrenComponents} from '../../data/dataFunctions/rende
 function Container(props) {
     //1. DATA FOR THIS COMPONENT
         //Pull Sample document
-        const {documentComponents, documentView} = props.singleDocument 
+        const {documentComponents, documentView} = singleDocument 
         //Create data for this component
         const curContainerData = documentComponents[props.curComponentId]
         const curComponentLevel = getCurLevel(curContainerData.id,documentView)
@@ -53,7 +53,7 @@ function Container(props) {
                     curContainerData={curContainerData} 
                     containerFunctions = {containerFunctions}
                     //Document data
-                    components = {documentComponents}
+                    documentComponents = {documentComponents}
                     documentView={documentView}/> : '' }
         </article>
     )
