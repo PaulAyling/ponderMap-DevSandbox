@@ -1,6 +1,6 @@
 import React from 'react'
 import Paragraph from '../documents/components/Paragraph'
-
+import link from '../documents/scratch/link'
 function Test1() {
 
     return (

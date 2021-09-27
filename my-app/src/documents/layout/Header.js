@@ -7,15 +7,17 @@ import BtnShare from '../furniture/buttons/Btn_share'
 
 function Header(props) {
     const container_name = props.curContainerData.container_name
-    const headerOuterStyle = props.curContainerData.Style_defaults.header_outerStyle
     const container_title =  props.curContainerData.title
 
+    //Style Variables
+    const { header_text,header_container } = props.curContainerData.Style_defaults
+
     return (
-        <header title={container_name} className={headerOuterStyle} >
+        <header title={container_name} className={header_container} >
         <div title="Visit Site" className="flex flex-row flex-grow pl-2 justify-between">
             <div className='flex flex-row'>
                 <BtnDragHandle containerFunctions = {props.containerFunctions} containerState = {props.containerState} containerData={props.curContainerData} />
-                <div className="text-center font-extralight font-bold text-xl text-decoration: underline">
+                <div className={header_text}>
                 {container_title } 
                 </div>
                 <BtnAdd containerFunctions =    {props.containerFunctions} containerState = {props.containerState} containerData={props.curContainerData} />

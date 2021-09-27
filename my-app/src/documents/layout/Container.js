@@ -38,8 +38,11 @@ function Container(props) {
         showDrag
     }
 
+    // Style Variables
+    const { container_outerStyle } = curContainerData.Style_defaults
+
     return (
-        <article className='m-1 bg-gray-300'>
+        <article className={container_outerStyle}>
             <Header
             curContainerData={curContainerData}
             //Button Management

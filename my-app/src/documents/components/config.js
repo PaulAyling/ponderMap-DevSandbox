@@ -17,14 +17,15 @@ const Btn_visable = {
 
 const Style_defaults = {
         'paragraph':{
-                'header_outerStyle':'rounded flex flex-row justify-between p-2 bg-gray-300 text-black',
-                'body_outerStyle':'flex flex-col border-black border-2 p-1 w-full',
+                'container_outerStyle':'rounded flex flex-col justify-between p-1 bg-gray-300 text-black',
+                'header_text':'text-center font-extralight font-bold text-xl',
                 
                 
         },
         'word':{
-                'header_outerStyle':'ml-1 mr-1 flex flex-row justify-between  bg-white text-black',
-                'body_outerStyle':  'ml-1 p-1  flex flex-col border-red w-full',
+                'container_outerStyle':'rounded flex flex-col justify-between p-1 m-1 bg-gray-100 text-black',
+                'header_container':'hover:bg-gray-300 rounded ',
+                'header_text':'text-center font-extralight font-bold text-xl text-decoration: underline text-blue',
         }
 }
 export { Btn_visable, Style_defaults } 
