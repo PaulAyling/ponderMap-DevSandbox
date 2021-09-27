@@ -1,7 +1,7 @@
 import React  from 'react'
 import { ExternalLink } from 'react-external-link'; 
 
-function Link() {
+function MyLink() {
     return (
         <div>
         <ExternalLink href="https://google.com">
@@ -11,4 +11,4 @@ function Link() {
     )
 }
 
-export default Link
+export default MyLink
