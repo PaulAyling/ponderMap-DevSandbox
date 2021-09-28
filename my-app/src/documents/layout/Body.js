@@ -1,10 +1,12 @@
 import React from 'react'
 import { getCurLevel,getChildrenComponents} from '../../data/dataFunctions/render'
+import Tags from '../furniture//tags'
 import Container from '../layout/Container'
+
 
 function Body(props) {
     //1. Content (If level = word)
-    const {id, notes, image_url, bodyOuterStyle}  = props.curContainerData
+    const {id, notes, image_url, bodyOuterStyle,tags}  = props.curContainerData
     const curComponentLevel = getCurLevel(props.curContainerData.id,props.documentView)
     const image_style = {
         backgroundImage: 'url('+ image_url +')' 
@@ -27,7 +29,8 @@ function Body(props) {
     return (
     <div>{curComponentLevel === 'word' ?
         <div className={bodyOuterStyle}>
-            <div className = "h-80 bg-cover" style={image_style}></div>
+            <Tags  tags={tags}/>
+            <div className = "h-60 bg-scroll bg-no-repeat bg-auto bg-center" style={image_style}></div>
             <div className="p-2">
             {notes}
             </div>

@@ -8,7 +8,6 @@ class DocumentContextProvider extends Component{
         ...singleDocument
     }
     render(){
-        console.log('state',this.state)
         return (
             <DocumentContext.Provider value={{...this.state}}>
                 {this.props.children}
