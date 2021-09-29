@@ -21,7 +21,7 @@ export function NameForm(props) {
   return (
     <form onSubmit={handleSubmit}>
       <label>
-        Title:
+        Title:nameform
         <input type="text" placeholder='Enter Descriptor' {...bindTitle} />
       </label>
       <input type="submit" value="Submit" />

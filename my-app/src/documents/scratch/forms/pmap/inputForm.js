@@ -3,15 +3,19 @@ import { DocumentContext } from '../../../../contexts/DocumentContext';
 import { v4 as uuidv4 } from 'uuid';
 
 const InputForm = (props) => {
+    const {documentComponents} = useContext(DocumentContext);
+    const curDocument = documentComponents[props.id]
+    const {id, title, url } = curDocument
+
+    console.log('curDocument:',curDocument)
+    
     const modifyItem=()=>{
         console.log('ththt')
     }
-	const documentContext = useContext(DocumentContext);
-    console.log('doc context',documentContext)
 
 	const handleSubmit = (event) => {
-        console.log('submitting.....')
-		// event.preventDefault();
+        console.log('submitting.....', event)
+		event.preventDefault();
 		// documentContext.updateDocument(
 		// 	props.editorEssentials.editorState._id,
 		// 	props.editorEssentials.editorState
