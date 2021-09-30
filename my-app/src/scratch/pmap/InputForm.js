@@ -8,7 +8,6 @@ const InputForm = (props) => {
     console.log('allcxt',allcxt)
 
     // console.log('documentComponents',documentComponents)
-    allcxt.updateState()
     const {documentComponents} =  useContext(DocumentContext);
     // console.log(documentContext)
     const curComponent = documentComponents[props.id]
