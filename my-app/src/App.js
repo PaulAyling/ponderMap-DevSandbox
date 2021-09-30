@@ -1,10 +1,11 @@
 import './App.css';
-import AppDev from './AppDev'
+// import AppDev from './AppDev'
+import AppDevCxt from './AppDevContexts'
 
 function App() {
   return (
     <div className="App">
-     <AppDev/>
+     <AppDevCxt/>
     </div>
   );
 }
