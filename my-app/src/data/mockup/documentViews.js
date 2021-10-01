@@ -10,6 +10,7 @@ const documentViews =
             {
              1:{
                 'id':1,
+                'version_id':1,
                 'parent':null,
                 'children':[2,3],
                 'siblings':[],
@@ -17,6 +18,7 @@ const documentViews =
                 },
             2:{
                 'id':2,
+                'version_id':1,
                 'parent':1,
                 'children':[],
                 'siblings':[],
@@ -24,6 +26,7 @@ const documentViews =
                 },
             3:{
                 'id':3,
+                'version_id':1,
                 'parent':1,
                 'children':[],
                 'siblings':[],
@@ -40,6 +43,7 @@ const documentViews =
                 1:
                 {
                    'id':1,
+                   'version_id':1,
                    'parent':null,
                    'children':[2,3],
                    'siblings':[],
@@ -48,6 +52,7 @@ const documentViews =
                2:   
                {
                    'id':2,
+                   'version_id':1,
                    'parent':1,
                    'children':[],
                    'siblings':[],

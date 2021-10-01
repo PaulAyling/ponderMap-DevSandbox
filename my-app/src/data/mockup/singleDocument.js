@@ -9,6 +9,8 @@ const docId = 1 // user picks this document
 const documentView = documentViews[docId]
 const componentIds = documentView.all_component_ids
 const documentComponents = getCurComponents(componentIds,allComponents)
+// console.log('SD allComponents',allComponents)
+// console.log('SD documentComponents',documentComponents)
 
 const singleDocument={
     documentView,

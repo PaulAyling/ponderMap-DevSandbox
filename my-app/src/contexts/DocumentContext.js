@@ -8,14 +8,11 @@ class DocumentContextProvider extends Component{
     constructor(props) {
         super(props);
         this.state= {
-            ...singleDocument,
-            'test':1  
-        }
+            ...singleDocument        }
         this.updateState = this.updateState.bind(this);
     }
         updateState= (newState,currentState) =>{
             //  update state to change the title of a post
-            console.log('update state ran!')
             this.setState({test:99})
         }
 
@@ -24,7 +21,10 @@ class DocumentContextProvider extends Component{
             <DocumentContext.Provider value={
                 {...this.state,
                 'updateState':this.updateState,
-                add,remove,edit}}>
+                add,remove,edit
+                
+                
+                }}>
                 {this.props.children}
             </DocumentContext.Provider>
         );

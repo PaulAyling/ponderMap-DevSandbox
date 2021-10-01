@@ -47,5 +47,15 @@ const getChildrenComponents = (componentId, components, curDocMap) =>{
     const res = childrenIds.map(getComponent)
     return res
 }
+const getCurCompVer = (id,versionId,components) =>{
+    const curComponent = components[id]
+    console.log('IN FCN:',curComponent)
+    const curVerDetails = curComponent.versions[versionId]
+    return {
+        curComponent,
+        ...curVerDetails
+    }
 
-export  { getCurDocIds, getCurDocMap, getCurComponents, getCurLevel, getChildrenComponents}
+}
+
+export  { getCurDocIds, getCurDocMap, getCurComponents, getCurCompVer, getCurLevel, getChildrenComponents}

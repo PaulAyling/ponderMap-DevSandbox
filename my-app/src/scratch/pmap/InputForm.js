@@ -1,16 +1,23 @@
 import React from 'react';
 import { useContext } from 'react/cjs/react.development'
 import { DocumentContext } from '../../contexts/DocumentContext'
+import { getCurCompVer} from '../../data/dataFunctions/render'
+
 import { v4 as uuidv4 } from 'uuid';
  
 const InputForm = (props) => {
     const allcxt =  useContext(DocumentContext);
-    console.log('allcxt',allcxt)
 
-    // console.log('documentComponents',documentComponents)
     const {documentComponents} =  useContext(DocumentContext);
-    // console.log(documentContext)
-    const curComponent = documentComponents[props.id]
+    // const curComponent = getCurCompVer(props.id,props.version,documentComponents)
+	// console.log('documentComponents',documentComponents)
+	console.log('>>>>>>>>>>>>',documentComponents[2])
+
+
+
+
+	// console.log('curComponent',curComponent)
+
     const modifyItem = (event) =>{
             console.log('MOdifying item.....',event.target,event.name)
         }
@@ -23,7 +30,7 @@ const InputForm = (props) => {
 		<form
 			onSubmit={handleSubmit}>
 			<div className={props.formWrapper }>
-				<input
+				{/* <input
 					key={uuidv4()}
 					type='text'
 					placeholder='Enter Descriptor'
@@ -34,7 +41,7 @@ const InputForm = (props) => {
 							'name'
 						);
 					}}
-				/>
+				/> */}
 			</div>
 		</form>
 	);
