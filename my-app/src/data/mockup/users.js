@@ -3,12 +3,12 @@ const users = {
     1:{
     'id':1,
     'name':'Paul',
-    'documents':[1]
+    'documentViews':[1]  //from documentViews.js
     },
     2:{
     'id':2,
     'name':'Nigel',
-    'documents':[2]
+    'documentViews':[2]
     },
 }
 

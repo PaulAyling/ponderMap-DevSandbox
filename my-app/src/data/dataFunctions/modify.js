@@ -8,8 +8,8 @@ const remove = () =>{
     const newState = 'newstate'
     return newState
 }
-const edit = () =>{
-    console.log('removeLink running.....')
+const edit = (newContent,fieldName,components) =>{
+    // console.log('Edit running.....')
     const newState = 'newstate'
     return newState
 }

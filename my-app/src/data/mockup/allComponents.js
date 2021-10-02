@@ -6,6 +6,11 @@ const allComponents =
 		id: 1,
 		url: "tbc",
         all_tags: ["lesiure", "sport", "machines"],
+        versionOwners:{
+                // userId:{ userId :1, versionId :1}
+                        1:{'userId':1,'versionId':1},
+                        2:{'userId':2,'versionId':2},
+                    },
 		versions: 
         {
 			1: 
@@ -31,6 +36,10 @@ const allComponents =
         id: 2,
         url: "https://en.wikipedia.org/wiki/Road_bicycle",
         all_tags: ["road", "sport"],
+        versionOwners:{
+                    1:{'userId':1,'versionId':1},
+                    2:{'userId':2,'versionId':1},
+                },
         versions: 
         {
             1: {
@@ -47,6 +56,10 @@ const allComponents =
         id: 3,
         url: "https://en.wikipedia.org/wiki/Mountain_biking",
         all_tags: ["road", "sport"],
+        versionOwners:{
+                    1:{'userId':1,'versionId':1},
+                    2:{'userId':2,'versionId':1},
+                },
         versions: 
         {
             1: {

@@ -1,6 +1,6 @@
 import {createContext, Component } from 'react'
 import {singleDocument} from '../data/mockup/singleDocument'
-import {add,remove,edit} from '../data/dataFunctions/stateEdit'
+import {add,remove,edit} from '../data/dataFunctions/modify'
 
 export const DocumentContext = createContext()
 
