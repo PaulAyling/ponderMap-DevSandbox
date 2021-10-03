@@ -45,7 +45,7 @@ const documentViews =
                    'id':1,
                    'version_id':1,
                    'parent':null,
-                   'children':[2,3],
+                   'children':[2],
                    'siblings':[],
                    'level':'paragraph',
                 },

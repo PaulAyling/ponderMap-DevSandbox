@@ -1,18 +1,14 @@
 import React from 'react';
 import { useContext } from 'react/cjs/react.development'
 import { DocumentContext } from '../../contexts/DocumentContext'
-import { getCurCompVer} from '../../data/dataFunctions/render'
+import { getComponent,updateComponent} from '../../data/dataFunctions/render'
 import { v4 as uuidv4 } from 'uuid';
  
 const InputForm = (props) => {
     const allcxt =  useContext(DocumentContext);
     const {documentComponents,updateState} =  useContext(DocumentContext);
-	const curComponent = getCurCompVer(props.id,props.version,documentComponents)
-
-
-
-
-	// console.log('curComponent',curComponent)
+	const curComponent = getComponent(props.id,props.user)
+	console.log('CUR_COMPOENNT',curComponent)
 
     const modifyItem = (event) =>{
             console.log('MOdifying item.....',event.target.value)

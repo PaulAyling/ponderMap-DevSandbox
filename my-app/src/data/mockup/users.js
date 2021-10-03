@@ -7,7 +7,7 @@ const users = {
     },
     2:{
     'id':2,
-    'name':'Nigel',
+    'name':'karoline',
     'documentViews':[2]
     },
 }

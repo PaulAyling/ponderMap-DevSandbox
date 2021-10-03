@@ -1,60 +1,103 @@
-import { allComponents } from '../mockup/allComponents'
-import { documentViews } from '../mockup/documentViews'
-import { users } from '../mockup/users'
-
+import { allComponents } from "../mockup/allComponents";
+import { documentViews } from "../mockup/documentViews";
+import { users } from "../mockup/users";
 
 // 1. Retrieve All DocViewIds for a given user
-const getCurDocIds = (userId) =>{
-    return users[userId].documentViews
-}
+const getCurDocIds = (userId) => {
+	return users[userId].documentViews;
+};
 // 2. Retrieve a single DocView
-const getDocView = (docViewId) =>{
-    return documentViews[docViewId]
-}
-//Get all the components for an arrang of component_idsgiven 
-const getDocComponents = (componentIds) =>{
-    var res ={}
-    for (var i = 0; i <= componentIds.length; i++) {
-        res[i]=allComponents[i]
-     }
-     return res
-}
-const getCurComponent = (id,components) =>{
-    console.log('getCurComponent run...')
-    // console.log('allComponents',allComponents)
+const getDocView = (docViewId) => {
+	return documentViews[docViewId];
+};
+//3. Get all the components for given docViewId
+const getDocComponents = (docViewId) => {
+	const all_component_ids = documentViews[docViewId].all_component_ids;
+	var res = {};
+	for (var i = 0; i <= all_component_ids.length; i++) {
+		res[i] = allComponents[i];
+	}
+	return res;
+};
+//4. Get Component & version for a specific componentId & userId
+const getComponent = (componentId, userId) => {
+	const component = allComponents[componentId];
+	const usersVersion = component.usersVersion[userId].versionId;
+	const usersContent = component.versions[usersVersion];
+	// present final output
+	const final = JSON.parse(JSON.stringify(component));
+	delete final.versions;
+	delete final.usersVersion;
+	const result = { ...final, usersVersion, ...usersContent };
+	return result;
+};
 
-
-    // const curComponent = components[id]
-    // console.log('IN FCN:',curComponent)
-    // const curVerDetails = curComponent.versions[versionId]
-    // return {
-    //     curComponent,
-    //     ...curVerDetails
-    // }
-
-}
-//get the current level
-const getCurLevel = (componentId,documentView) =>{
-    return documentView.component_hierachy[componentId].level
-}
-
-const getChildrenComponents = (componentId, components, curDocMap) =>{
-    const getCurChildrenIds = (componentId,curDocMap) =>{
-        // console.log('componentId',componentId)
-        // console.log('documentMap',curDocMap.component_hierachy[componentId].children)
-        return curDocMap.component_hierachy[componentId].children
+//5. Update components object with edited content
+const updateComponent = (component, newContent, fieldToUpdate) => {
+	const newFields = { [fieldToUpdate]: newContent };
+	const versionToChange =
+		allComponents[component.id].versions[component.usersVersion];
+	//1. Update version
+	const updatedVersion = {
+		[component.usersVersion]: {
+			...versionToChange,
+			...newFields,
+		},
+	};
+	//2. update versions
+	const updatedVersions = {
+		versions: {
+			...allComponents[component.id].versions,
+			...updatedVersion,
+		},
+	};
+	//3. update component
+	const updatedComponent = 
+    {
+        [component.id]:{
+        		...allComponents[component.id],
+		        ...updatedVersions
+	                    }
     }
-    const childrenIds = getCurChildrenIds(componentId,curDocMap)
+	// console.log("updatedComponent", updatedComponent);
+    //4. update allComponents
+    const newAllComponents = {
+        ...allComponents,
+        ...updatedComponent
+    }
+    // console.log("newAllComponents", newAllComponents[1]);
+    return newAllComponents
+};
 
-    const getComponent = (num) =>{
-        return components[num]
-     }
-    const res = childrenIds.map(getComponent)
-    return res
-}
+//get the current level
+const getCurLevel = (componentId, documentView) => {
+	return documentView.component_hierachy[componentId].level;
+};
 
+const getChildrenComponents = (componentId, components, curDocMap) => {
+	const getCurChildrenIds = (componentId, curDocMap) => {
+		// console.log('componentId',componentId)
+		// console.log('documentMap',curDocMap.component_hierachy[componentId].children)
+		return curDocMap.component_hierachy[componentId].children;
+	};
+	const childrenIds = getCurChildrenIds(componentId, curDocMap);
 
-export  { getCurDocIds, getDocView, getDocComponents,  getCurLevel, getChildrenComponents, getCurComponent}
+	const getComponent = (num) => {
+		return components[num];
+	};
+	const res = childrenIds.map(getComponent);
+	return res;
+};
+
+export {
+	getCurDocIds,
+	getDocView,
+	getDocComponents,
+	getComponent,
+	updateComponent,
+	getCurLevel,
+	getChildrenComponents,
+};
 /*
 FUNCTIONS USED TO RENDER THE PONDERMAP DOCUMENT
 

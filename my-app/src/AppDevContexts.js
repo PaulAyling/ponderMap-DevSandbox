@@ -3,7 +3,7 @@ import InputForm from './scratch/pmap/InputForm'
 function AppDevCxt() {
     return (
         <DocumentContextProvider>
-            <InputForm id='1' version='1'/>
+            <InputForm id='1' user='1'/>
         </DocumentContextProvider>
     )
 }
