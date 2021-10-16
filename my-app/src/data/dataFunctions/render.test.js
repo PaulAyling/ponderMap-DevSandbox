@@ -1,12 +1,9 @@
-import { getCurDocIds, getDocView, getDocComponents, getComponent, updateComponent, getCurLevel, getChildrenComponents} from './render'
-
+import { getCurDocIds, getDocView, getComponents, getComponent, updateComponent, getCurLevel, getChildrenComponents} from './render'
 const user = 1
 const docViewId = 1
 const componentId = 1
 const allComponentIds = [ 1, 2, 3 ]
 const testComponent = getComponent(componentId,user)
-
-
 
 describe.only('TEST SUITE', () => {
   it('1. Get All DocViews', () => {
@@ -23,8 +20,8 @@ describe.only('TEST SUITE', () => {
   });
   it('3 getComponents ', () => {
     // Compnents for a given docView
-    const docComponents = getDocComponents(docViewId)
-    // console.log('3 getComponents.:',docComponents[1])
+    const docComponents = getComponents(docViewId)
+    console.log('3 getComponents.:',docComponents[1])
     expect('').toStrictEqual('');
   });
   it('4 getComponent ', () => {
@@ -37,7 +34,7 @@ describe.only('TEST SUITE', () => {
   it('5 updateComponent ', () => {
     //update components object with edited content
     const newAllComponents = updateComponent(testComponent, 'Bikes: Updated Title','title')
-    console.log('newAllComponents',newAllComponents)
+    // console.log('newAllComponents',newAllComponents)
     expect('').toStrictEqual('');
   });
   it('3 getCurLevel ', () => {

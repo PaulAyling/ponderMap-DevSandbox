@@ -1,8 +1,8 @@
-import Paragraph from "./documents/components/Paragraph"
+// import Paragraph from "./documents/components/Paragraph"
 function AppDev() {
     return (
         <div className="w-1/3">
-            <Paragraph />
+            {/* <Paragraph /> */}
         </div>
     )
 }

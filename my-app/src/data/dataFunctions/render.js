@@ -11,7 +11,7 @@ const getDocView = (docViewId) => {
 	return documentViews[docViewId];
 };
 //3. Get all the components for given docViewId
-const getDocComponents = (docViewId) => {
+const getComponents = (docViewId) => {
 	const all_component_ids = documentViews[docViewId].all_component_ids;
 	var res = {};
 	for (var i = 0; i <= all_component_ids.length; i++) {
@@ -92,7 +92,7 @@ const getChildrenComponents = (componentId, components, curDocMap) => {
 export {
 	getCurDocIds,
 	getDocView,
-	getDocComponents,
+	getComponents,
 	getComponent,
 	updateComponent,
 	getCurLevel,
