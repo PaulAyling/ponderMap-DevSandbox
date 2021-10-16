@@ -34,7 +34,8 @@ describe.only('TEST SUITE', () => {
   it('5 updateComponent ', () => {
     //update components object with edited content
     const newAllComponents = updateComponent(testComponent, 'Bikes: Updated Title','title')
-    // console.log('newAllComponents',newAllComponents)
+    console.log('testComponent',testComponent)
+    console.log('newAllComponents',newAllComponents[1])
     expect('').toStrictEqual('');
   });
   it('3 getCurLevel ', () => {

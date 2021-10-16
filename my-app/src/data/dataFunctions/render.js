@@ -20,7 +20,7 @@ const getComponents = (docViewId) => {
 	return res;
 };
 //4. Get Component & version for a specific componentId & userId
-const getComponent = (componentId, userId) => {
+const getComponent = (componentId, userId,allComponents) => {
 	const component = allComponents[componentId];
 	const usersVersion = component.usersVersion[userId].versionId;
 	const usersContent = component.versions[usersVersion];
@@ -35,6 +35,7 @@ const getComponent = (componentId, userId) => {
 //5. Update components object with edited content
 const updateComponent = (component, newContent, fieldToUpdate) => {
 	const newFields = { [fieldToUpdate]: newContent };
+	// console.log('newFields',newFields)
 	const versionToChange =
 		allComponents[component.id].versions[component.usersVersion];
 	//1. Update version
