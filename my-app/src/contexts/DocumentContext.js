@@ -12,16 +12,15 @@ class DocumentContextProvider extends Component{
         this.updateState = this.updateState.bind(this);
     }
         updateState= (newAllComponents) =>{
-            console.log('this state',this.state)
         //5. Create New State
             const newState = {
                 ...this.state,
                 ...newAllComponents
 	        }
             //  update state to change the title of a post
-            console.log('nreState',newState)
+            
             this.setState(newState)
-            console.log('modified State:', this.state)
+            console.log('context STATE:',this.state.documentComponents[1].versions[1].title)
         }
 
     render(){

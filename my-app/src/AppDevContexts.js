@@ -1,5 +1,5 @@
 import DocumentContextProvider from './contexts/DocumentContext'
-import InputForm from './scratch/pmap/InputForm'
+import InputForm from './documents/layout/InputForm'
 function AppDevCxt() {
     return (
         <DocumentContextProvider>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useContext } from 'react/cjs/react.development'
-import { DocumentContext } from '../../contexts/DocumentContext'
+import { DocumentContext } from '.././../contexts/DocumentContext'
 import { getComponent,updateComponent} from '../../data/dataFunctions/render'
 import { v4 as uuidv4 } from 'uuid';
  
@@ -8,11 +8,12 @@ const InputForm = (props) => {
     const allcxt =  useContext(DocumentContext);
     const {documentComponents,updateState} =  useContext(DocumentContext);
 	const curComponent = getComponent(props.id,props.user,allcxt.documentComponents)
+	// console.log('IF: curComponent',allcxt.documentComponents[curComponent.id].versions[curComponent.usersVersion].title)
     const modifyItem = (event) =>{
-            console.log('MOdifying item.....',event.target.value)
+            console.log('IF:MOdifying item.....',event.target.value)
 			const newComponent = updateComponent(curComponent,event.target.value,'title')
-			console.log('curComponent',curComponent)
-			console.log('Result',newComponent[1])
+			// console.log('IF: curComponent',curComponent.documentComponents[1].versions[1].title)
+			console.log('IF: Result',newComponent[1])
 			//Update state with new value 
 			updateState(newComponent)
         }
@@ -28,7 +29,7 @@ const InputForm = (props) => {
 					key={uuidv4()}
 					type='text'
 					placeholder='Enter Descriptor'
-					value={allcxt[curComponent.id].versions[curComponent.usersVersion].title}
+					value={allcxt.documentComponents[curComponent.id].versions[curComponent.usersVersion].title}
 					onChange={(event) => {
 						modifyItem(
 							event,
