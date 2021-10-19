@@ -7,11 +7,12 @@ import Body from '../layout/Body'
 import { Btn_visable, Style_defaults } from '../components/config'
 import { getCurLevel} from '../../data/dataFunctions/render'
 
-function Container(props) {
+function Container(curComponentId) {
 //1. DATA FOR THIS COMPONENT
     const {documentComponents, documentView} =  useContext(DocumentContext);
     //Create data for this component
-    const curContainerData = documentComponents[props.curComponentId]
+    const curContainerData = documentComponents[curComponentId]
+    console.log('curContainerData xxxxxxx:',curContainerData)
     const curComponentLevel = getCurLevel(curContainerData.id,documentView)
     //Add styling abnd button present for this curComponentLevel
     curContainerData.Btn_visible = Btn_visable[curComponentLevel]

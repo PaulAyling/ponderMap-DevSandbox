@@ -1,5 +1,6 @@
 import React from 'react'
 import { ExternalLink } from 'react-external-link'; 
+import InputForm from './InputForm';
 
 
 function TitleEditor(props) {
