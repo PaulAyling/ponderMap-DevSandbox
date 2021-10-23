@@ -17,15 +17,12 @@ function Container(prop) {
     const {documentComponents, documentView,userId} =  useContext(DocumentContext);
     //Create data for this component
     // const curContainerData = documentComponents[prop.curComponentId]
-
+    // console.log('CONTAINER: ','PROPID,',prop.id,'USERID',userId,'DOCCOMP',documentComponents)
     const curContainerData = getComponent(prop.id,userId,documentComponents)
-    console.log('CONTAINER: curComponent',curContainerData)
-
     const curComponentLevel = getCurLevel(curContainerData.id,documentView)
     //Add styling abnd button present for this curComponentLevel
     curContainerData.Btn_visible = Btn_visable[curComponentLevel]
     curContainerData.Style_defaults = Style_defaults[curComponentLevel]
-
 //2. SETUP STATE & STATE FUNCTION FOR BUTTON TOGGLES
     const [showHide, setshowHide] = useState(false);
     const [showDrag, setShowDrag] = useState(false);
@@ -52,7 +49,6 @@ function Container(prop) {
         <article className={container_outerStyle}>
             {edit ?
             <HeaderModify
-            curComponentId = {prop.curComponentId}
             curContainerData={curContainerData}
             //Button Management
             containerFunctions = {containerFunctions}

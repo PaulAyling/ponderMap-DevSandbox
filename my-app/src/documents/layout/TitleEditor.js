@@ -6,9 +6,7 @@ import { getComponent } from '../../data/dataFunctions/render'
 import { DocumentContext } from '.././../contexts/DocumentContext'
 
 function TitleEditor(props) {
-    const {documentComponents, userId} =  useContext(DocumentContext);
-    const curComponent = getComponent(props.id,userId,documentComponents)
-    const {title, url, header_text} = curComponent
+    const {title, url, header_text} = props.curContainerData
     return (
         <ExternalLink className={header_text} href={url}>
             <span>{title} </span>
