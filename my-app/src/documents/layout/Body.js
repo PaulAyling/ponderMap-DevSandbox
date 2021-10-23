@@ -3,9 +3,6 @@ import { getCurLevel,getChildrenComponents} from '../../data/dataFunctions/rende
 import Tags from '../furniture//tags'
 import Container from '../layout/Container'
 
-import { useContext } from 'react/cjs/react.development'
-import { getComponent } from '../../data/dataFunctions/render'
-import { DocumentContext } from '.././../contexts/DocumentContext'
 
 
 function Body(props) {
