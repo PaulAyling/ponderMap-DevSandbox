@@ -22,6 +22,7 @@ const getComponents = (docViewId) => {
 //4. Get Component & version for a specific componentId & userId
 const getComponent = (componentId, userId,allComponents) => {
 	const component = allComponents[componentId];
+	console.log('component',component)
 	const usersVersion = component.usersVersion[userId].versionId;
 	const usersContent = component.versions[usersVersion];
 	// present final output

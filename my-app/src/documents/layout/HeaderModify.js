@@ -8,7 +8,6 @@ function HeaderModify(props) {
     const { title, id } = props.curContainerData
     //Style Variables
     const { header_text,header_container } = props.curContainerData.Style_defaults
-    console.log('got herez')
     return (
         <header title={title} className={header_container} >
         <div className='text-xs'>EDIT</div>

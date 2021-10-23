@@ -10,13 +10,6 @@ import { DocumentContext } from '.././../contexts/DocumentContext'
 
 function Body(props) {
     //1. Content (If level = word)
-
-
-
-
-
-
-
     const {id, notes, image_url, bodyOuterStyle,all_tags}  = props.curContainerData
     console.log('BODY: props.curContainerData',props.curContainerData)
     const curComponentLevel = getCurLevel(props.curContainerData.id,props.documentView)

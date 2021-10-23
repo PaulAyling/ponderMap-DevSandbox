@@ -5,7 +5,7 @@ function AppDevCxt() {
     return (
         <DocumentContextProvider>
             {/* <InputForm id='1' user='1'/> */}
-            <Container id='1'   />
+            <Container curComponentId='1'   />
         </DocumentContextProvider>
     )
 }

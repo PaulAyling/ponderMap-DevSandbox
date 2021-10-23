@@ -17,8 +17,8 @@ function Container(prop) {
     const {documentComponents, documentView,userId} =  useContext(DocumentContext);
     //Create data for this component
     // const curContainerData = documentComponents[prop.curComponentId]
-    // console.log('CONTAINER: ','PROPID,',prop.id,'USERID',userId,'DOCCOMP',documentComponents)
-    const curContainerData = getComponent(prop.id,userId,documentComponents)
+    console.log('CONTAINER:getcomponent args ','PROPID,',prop.curComponentId,'USERID',userId,'DOCCOMP',documentComponents)
+    const curContainerData = getComponent(prop.curComponentId,userId,documentComponents)
     const curComponentLevel = getCurLevel(curContainerData.id,documentView)
     //Add styling abnd button present for this curComponentLevel
     curContainerData.Btn_visible = Btn_visable[curComponentLevel]
