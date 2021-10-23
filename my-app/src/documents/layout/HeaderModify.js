@@ -10,8 +10,7 @@ function HeaderModify(props) {
     const { header_text,header_container } = props.curContainerData.Style_defaults
     return (
         <header title={title} className={header_container} >
-        <div className='text-xs'>EDIT</div>
-        <div title="Visit Site" className="flex flex-row flex-grow pl-2 justify-between">
+        <div title="Visit Site" className="rounded-3 flex flex-row flex-grow pl-2 justify-between">
             <div className='flex flex-row'>
                 <BtnDragHandle 
                     containerFunctions = {props.containerFunctions} 

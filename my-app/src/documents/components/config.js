@@ -17,7 +17,7 @@ const Btn_visable = {
 
 const Style_defaults = {
         'paragraph':{
-                'container_outerStyle':'rounded flex flex-col justify-between p-1 bg-gray-300 text-black',
+                'container_outerStyle':' rounded flex flex-col justify-between p-1 bg-gray-300 text-black',
                 'header_text':'text-center font-extralight font-bold text-xl',
                 
                 

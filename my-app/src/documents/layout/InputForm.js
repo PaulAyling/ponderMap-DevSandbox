@@ -7,7 +7,11 @@ import { v4 as uuidv4 } from 'uuid';
 const InputForm = (props) => {
     const allcxt =  useContext(DocumentContext);
     const {updateState} =  useContext(DocumentContext);
-	const curComponent = getComponent(props.id,props.user,allcxt.documentComponents)
+	const {id,header_text} = props.curContainerData
+
+	console.log('allcxt',allcxt.userId)
+
+	const curComponent = getComponent(id,allcxt.userId,allcxt.documentComponents)
     const modifyItem = (event) =>{
 			const newComponent = updateComponent(curComponent,event.target.value,'title')
 			//Update state with new value 
@@ -20,7 +24,7 @@ const InputForm = (props) => {
     return (
 		<form
 			onSubmit={handleSubmit}>
-			<div className={props.formWrapper }>
+			<div className={header_text}>
 				<input
 					key={uuidv4()}
 					type='text'
