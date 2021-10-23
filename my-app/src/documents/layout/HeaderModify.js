@@ -5,7 +5,7 @@ import TitleToolbar from '../furniture/TitleToolbar'
 
 function HeaderModify(props) {
     //Content
-    const { url, title, } = props.curContainerData
+    const { title } = props.curContainerData
     //Style Variables
     const { header_text,header_container } = props.curContainerData.Style_defaults
     return (
@@ -18,9 +18,7 @@ function HeaderModify(props) {
                     containerState = {props.containerState} 
                     containerData={props.curContainerData} />
                 <TitleEditor 
-                    title={title} 
-                    url={url} 
-                    header_text={header_text}/>
+                    id = {props.curComponentId}/>
                 <TitleToolbar 
                     containerFunctions =    {props.containerFunctions} 
                     containerState = {props.containerState} 

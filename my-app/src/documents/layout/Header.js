@@ -3,9 +3,11 @@ import BtnDragHandle from '../furniture/buttons/Btn_dragHandle'
 import TitleEditor from './TitleEditor'
 import TitleToolbar from '../furniture/TitleToolbar'
 
-function HeaderModify(props) {
+function Header(props) {
     //Content
-    const { url, title, } = props.curContainerData
+    const { url, title} = props.curContainerData
+    console.log('HEADER RAN.....')
+    console.log('header:url,title',url,title)
     //Style Variables
     const { header_text,header_container } = props.curContainerData.Style_defaults
     return (
@@ -34,4 +36,4 @@ function HeaderModify(props) {
     )
 }
 
-export default HeaderModify
+export default Header

@@ -1,5 +1,9 @@
 import  { useState, useContext } from 'react'
 import { DocumentContext } from '../../contexts/DocumentContext'
+import { getComponent } from '../../data/dataFunctions/render'
+
+
+
 
 import HeaderModify from './HeaderModify'
 import Header from './Header'
@@ -7,12 +11,16 @@ import Body from '../layout/Body'
 import { Btn_visable, Style_defaults } from '../components/config'
 import { getCurLevel} from '../../data/dataFunctions/render'
 
-function Container(curComponentId) {
+function Container(prop) {
+    // console.log('container prop.id ',prop.curComponentId)
 //1. DATA FOR THIS COMPONENT
-    const {documentComponents, documentView} =  useContext(DocumentContext);
+    const {documentComponents, documentView,userId} =  useContext(DocumentContext);
     //Create data for this component
-    const curContainerData = documentComponents[curComponentId]
-    console.log('curContainerData xxxxxxx:',curContainerData)
+    // const curContainerData = documentComponents[prop.curComponentId]
+
+    const curContainerData = getComponent(prop.id,userId,documentComponents)
+    console.log('CONTAINER: curComponent',curContainerData)
+
     const curComponentLevel = getCurLevel(curContainerData.id,documentView)
     //Add styling abnd button present for this curComponentLevel
     curContainerData.Btn_visible = Btn_visable[curComponentLevel]
@@ -44,6 +52,7 @@ function Container(curComponentId) {
         <article className={container_outerStyle}>
             {edit ?
             <HeaderModify
+            curComponentId = {prop.curComponentId}
             curContainerData={curContainerData}
             //Button Management
             containerFunctions = {containerFunctions}

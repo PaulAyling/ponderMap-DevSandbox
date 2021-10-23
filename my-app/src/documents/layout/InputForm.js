@@ -10,7 +10,6 @@ const InputForm = (props) => {
 	const curComponent = getComponent(props.id,props.user,allcxt.documentComponents)
     const modifyItem = (event) =>{
 			const newComponent = updateComponent(curComponent,event.target.value,'title')
-			// console.log('IF: Result',newComponent[1])
 			//Update state with new value 
 			updateState(newComponent)
         }
