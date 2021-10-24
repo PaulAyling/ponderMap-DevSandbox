@@ -12,9 +12,9 @@ const InputForm = (props) => {
 	const curComponent = getComponent(id,allcxt.userId,allcxt.documentComponents)
     const modifyItem = (event) =>{
 			event.preventDefault();
-			console.log('modifyItem running......')
+			// console.log('modifyItem running......')
 			const newComponent = updateComponent(curComponent,event.target.value,'title')
-			console.log('modifyItem Nedw compo......',newComponent[1].versions[1].title)
+			// console.log('modifyItem Nedw compo......',newComponent[1].versions[1].title)
 			//Update state with new value 
 			updateState(newComponent)
         }
