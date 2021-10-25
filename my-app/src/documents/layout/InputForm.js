@@ -5,33 +5,29 @@ import { getComponent,updateComponent} from '../../data/dataFunctions/render'
 import { v4 as uuidv4 } from 'uuid';
  
 const InputForm = (props) => {
+	// console.log('title in modifyItem',title)
     var allcxt =  useContext(DocumentContext);
     const {updateState} =  useContext(DocumentContext);
 	const {id,header_text} = props.curContainerData
 	
 	const curComponent = getComponent(id,allcxt.userId,allcxt.documentComponents)
 	var title = allcxt.documentComponents[curComponent.id].versions[curComponent.usersVersion].title
+	console.log('title',title)
 	console.log('allcxt:',allcxt.documentComponents[curComponent.id].versions[curComponent.usersVersion].title)
 
-	var between = title
     const modifyItem = (event) =>{
 			event.preventDefault();
 			// console.log('modifyItem running......')
 			const newComponent = updateComponent(curComponent,event.target.value,'title')
-			// console.log('modifyItem Nedw compo......',newComponent[1].versions[1].title)
+			console.log('modifyItem N edw compo......',newComponent[1].versions[1].title)
 			//Update state with new value 
 			updateState(newComponent) 
-			console.log('event.target.value',event.target.value)
+			// console.log('event.target.value',event.target.value)
 			title = event.target.value
-			console.log('title in modifyItem',title)
 
         }
 
-		console.log('title',title)
-		useEffect(() =>{
-			console.log('state has been changed')
-			
-		})
+
 
     const handleSubmit = (event) => {
             event.preventDefault();

@@ -14,7 +14,7 @@ class DocumentContextProvider extends Component{
         this.updateState = this.updateState.bind(this);
     }
         updateState= (newAllComponents) =>{
-            console.log('updateState ARG',newAllComponents)
+            console.log('updateState ARG',newAllComponents[1])
         //5. Create New State
             const newState = {
                 ...this.state,
@@ -24,7 +24,7 @@ class DocumentContextProvider extends Component{
             this.setState(newState)
         }
         render(){
-        console.log('context state', this.state)
+        console.log('context  state', this.state[1])
         return (
             <DocumentContext.Provider value={
                 {...this.state,

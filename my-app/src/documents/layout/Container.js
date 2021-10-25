@@ -1,4 +1,4 @@
-import  { useState, useContext } from 'react'
+import  { useState, useContext, useEffect } from 'react'
 import { DocumentContext } from '../../contexts/DocumentContext'
 import { getComponent } from '../../data/dataFunctions/render'
 
@@ -12,6 +12,13 @@ import { Btn_visable, Style_defaults } from '../components/config'
 import { getCurLevel} from '../../data/dataFunctions/render'
 
 function Container(prop) {
+
+    useEffect(() => {
+
+    }, []);
+
+
+
     // console.log('container prop.id ',prop.curComponentId)
 //1. DATA FOR THIS COMPONENT
     const {documentComponents, documentView,userId} =  useContext(DocumentContext);
