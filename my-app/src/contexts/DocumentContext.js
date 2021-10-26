@@ -20,11 +20,12 @@ class DocumentContextProvider extends Component{
                 ...this.state,
                 ...newAllComponents
 	        }
+            console.log('updateState newState', newState)
             //  update state to change the title of a post
             this.setState(newState)
         }
         render(){
-        console.log('context  state', this.state[1])
+        console.log('context  state (context)', this.state)
         return (
             <DocumentContext.Provider value={
                 {...this.state,

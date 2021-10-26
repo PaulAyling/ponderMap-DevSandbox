@@ -1,20 +1,19 @@
 import React from 'react';
 import { useContext } from 'react/cjs/react.development'
-// import { TstDocumentContext } from './tst_context.js'
-import { DocumentContext } from '../../contexts/DocumentContext';
+import { TstDocumentContext } from './tst_context.js.js'
+
  
 const Tst_inputForm = (props) => {
-    const allcxt =  useContext(DocumentContext);
-    const {updateState} =  useContext(DocumentContext);
+    const allcxt =  useContext(TstDocumentContext);
+    const {updateState} =  useContext(TstDocumentContext);
 
-    console.log('allcxt',allcxt.userId)
+    console.log('allcxt',allcxt.title)
 	
 
     const modifyItem = (event) =>{
 			event.preventDefault();
             console.log(event.target.value)
-            const newState={"userId":event.target.value}
-            console.log('newState:',newState)
+            const newState={"title":event.target.value}
             updateState(newState) 
 
 			
@@ -33,7 +32,7 @@ const Tst_inputForm = (props) => {
 				<input
 					type='text'
 					placeholder='Enter Descriptor'
-					value={allcxt.userId}
+					value={allcxt.title}
 					onChange={(event) => {
 						modifyItem(
 							event,
