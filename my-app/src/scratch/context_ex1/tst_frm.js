@@ -7,13 +7,17 @@ const Tst_inputForm = (props) => {
     const allcxt =  useContext(DocumentContext);
     const {updateState} =  useContext(DocumentContext);
 
-    console.log('allcxt',allcxt.userId)
+    console.log('allcxt - components',allcxt.documentComponents[1].versions[1].title)
 	
 
     const modifyItem = (event) =>{
 			event.preventDefault();
             console.log(event.target.value)
-            const newState={"userId":event.target.value}
+            //THIS NEEDS TO CHANGE!!
+            // const newState={"userId":event.target.value}
+
+
+
             console.log('newState:',newState)
             updateState(newState) 
 
@@ -33,7 +37,7 @@ const Tst_inputForm = (props) => {
 				<input
 					type='text'
 					placeholder='Enter Descriptor'
-					value={allcxt.userId}
+					value={allcxt.documentComponents[1].versions[1].title}
 					onChange={(event) => {
 						modifyItem(
 							event,
