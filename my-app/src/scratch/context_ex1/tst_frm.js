@@ -14,7 +14,7 @@ const Tst_inputForm = (props) => {
 			event.preventDefault();
             console.log(event.target.value)
             //THIS NEEDS TO CHANGE!!
-            // const newState={"userId":event.target.value}
+            const newState={"userId":event.target.value}
 
 
 
@@ -37,7 +37,7 @@ const Tst_inputForm = (props) => {
 				<input
 					type='text'
 					placeholder='Enter Descriptor'
-					value={allcxt.documentComponents[1].versions[1].title}
+					value={allcxt.userId}
 					onChange={(event) => {
 						modifyItem(
 							event,

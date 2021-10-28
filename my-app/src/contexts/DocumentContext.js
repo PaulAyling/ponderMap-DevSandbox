@@ -12,27 +12,26 @@ class DocumentContextProvider extends Component{
             'userId':'1'        //hardcoded for now
         }
         this.updateState = this.updateState.bind(this);
+        console.log('1 STATE', this.state.documentComponents[1].versions[1].title)
     }
-        updateState= (newAllComponents) =>{
-            console.log('updateState ARG',newAllComponents[1])
+    updateState= (newAllComponents) =>{
+        console.log('updateState ARG',newAllComponents[1])
         //5. Create New State
-            const newState = {
-                ...this.state,
-                ...newAllComponents
-	        }
-            console.log('updateState newState', newState)
-            //  update state to change the title of a post
-            this.setState(newState)
+        const newState = {
+            ...this.state,
+            ...newAllComponents
         }
-        render(){
-        console.log('context  state (context)', this.state)
-        return (
+        console.log('updateState newState', newState[1].versions[1].title)
+        //  update state to change the title of a post
+        this.setState(newState)
+    }
+    render(){
+            console.log('2 STATE', this.state.documentComponents[1].versions[1].title)
+            return (
             <DocumentContext.Provider value={
                 {...this.state,
                 'updateState':this.updateState,
                 add,remove,edit
-                
-                
                 }}>
                 {this.props.children}
             </DocumentContext.Provider>
