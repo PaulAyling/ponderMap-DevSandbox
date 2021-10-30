@@ -1,4 +1,4 @@
-import React,{ useEffect } from 'react';
+import React from 'react';
 import { useContext } from 'react/cjs/react.development'
 import { DocumentContext } from '.././../contexts/DocumentContext'
 import { getComponent,updateComponent} from '../../data/dataFunctions/render'
@@ -31,8 +31,8 @@ const InputForm = (props) => {
         };   
     return (
 		<form
-			onSubmit={handleSubmit}>
-			<div className='header_text'>
+			onSubmit={handleSubmit} key='8998'>
+			<div className='header_text' key='7878'>
 				<input
 					key={uuidv4()}
 					type='text'
