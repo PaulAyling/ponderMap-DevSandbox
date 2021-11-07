@@ -2,6 +2,8 @@ import React from 'react'
 import { getCurLevel,getChildrenComponents} from '../../data/dataFunctions/render'
 import Tags from '../furniture//tags'
 import Container from '../layout/Container'
+import { v4 as uuidv4 } from 'uuid';
+
 
 
 
@@ -29,7 +31,7 @@ function Body(props) {
         )
         })
     return (
-    <div>{curComponentLevel === 'word' ?
+    <div key={uuidv4()}>{curComponentLevel === 'word' ?
         <div className={bodyOuterStyle}>
             <Tags  tags={all_tags}/>
             <div className = "h-60 bg-scroll bg-no-repeat bg-auto bg-center" style={image_style}></div>

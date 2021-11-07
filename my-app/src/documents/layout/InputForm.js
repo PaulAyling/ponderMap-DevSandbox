@@ -7,10 +7,13 @@ import { v4 as uuidv4 } from 'uuid';
 const InputForm = (props) => {
 	const {id} = props.curContainerData
     var allcxt =  useContext(DocumentContext);
-    const {updateState} =  useContext(DocumentContext);
 
+    const {updateState} =  useContext(DocumentContext);
+	
 	
 	const curComponent = getComponent(id,allcxt.userId,allcxt.documentComponents)
+	// const title = allcxt.documentComponents[curComponent.id].versions[curComponent.usersVersion].title
+	const title = allcxt.documentComponents[1].versions[1].title
 
     const modifyItem = (event) =>{
 			event.preventDefault();
@@ -23,21 +26,18 @@ const InputForm = (props) => {
 
         }
 
-
-
     const handleSubmit = (event) => {
             event.preventDefault();
             console.log('handlesubmit initiated xxxx',event.target)
-        };   
+        }; 
     return (
 		<form
-			onSubmit={handleSubmit} key='8998'>
-			<div className='header_text' key='7878'>
+			onSubmit={handleSubmit} key={uuidv4()}>
+			<div className='header_text' >
 				<input
-					key={uuidv4()}
 					type='text'
 					placeholder='Enter Descriptor'
-					value={allcxt.documentComponents[curComponent.id].versions[curComponent.usersVersion].title}
+					value={title}
 					onChange={(event) => {
 						modifyItem(
 							event,
@@ -45,6 +45,9 @@ const InputForm = (props) => {
 						);
 					}}
 				/> 
+			</div>
+			<div>
+				<h1>{allcxt.documentComponents[curComponent.id].versions[curComponent.usersVersion].title}</h1>
 			</div>
 		</form>
 	);

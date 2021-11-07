@@ -9,9 +9,11 @@ class DocumentContextProvider extends Component{
         super(props);
         this.state= {
             ...singleDocument,
+
             'userId':'1'        //hardcoded for now
         }
         this.updateState = this.updateState.bind(this);
+        console.log('1 ALL STATE', this.state)
         console.log('1 STATE', this.state.documentComponents[1].versions[1].title)
     }
     updateState= (newAllComponents) =>{

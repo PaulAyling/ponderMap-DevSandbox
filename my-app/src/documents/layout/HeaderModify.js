@@ -2,6 +2,8 @@ import BtnShowHide from '../furniture/buttons/Btn_showHide'
 import BtnDragHandle from '../furniture/buttons/Btn_dragHandle'
 import TitleEditor from './TitleEditor'
 import TitleToolbar from '../furniture/TitleToolbar'
+import { v4 as uuidv4 } from 'uuid';
+
 
 function HeaderModify(props) {
     //Content
@@ -10,7 +12,7 @@ function HeaderModify(props) {
     //Style Variables
     const {header_container } = props.curContainerData.Style_defaults
     return (
-        <header title={title} className={header_container} >
+        <header title={title} className={header_container} key={uuidv4()} >
         <div title="Visit Site" className="rounded-3 flex flex-row flex-grow pl-2 justify-between">
             <div className='flex flex-row'>
                 <BtnDragHandle 

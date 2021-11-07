@@ -10,6 +10,8 @@ import Header from './Header'
 import Body from '../layout/Body'
 import { Btn_visable, Style_defaults } from '../components/config'
 import { getCurLevel} from '../../data/dataFunctions/render'
+import { v4 as uuidv4 } from 'uuid';
+
 
 function Container(prop) {
 
@@ -52,7 +54,7 @@ function Container(prop) {
 // togle Edit
     const edit = true
     return (
-        <article className={container_outerStyle}>
+        <article className={container_outerStyle} key={uuidv4()}>
             {edit ?
             <HeaderModify
             curContainerData={curContainerData}
