@@ -8,8 +8,8 @@ const InputForm = (props) => {
 	const {id} = props.curContainerData
     var allcxt =  useContext(DocumentContext);
 
-    const {updateState} =  useContext(DocumentContext);
-	
+    const {updateState,testVar} =  useContext(DocumentContext);
+	console.log('testVar',testVar)
 	
 	const curComponent = getComponent(id,allcxt.userId,allcxt.documentComponents)
 	// const title = allcxt.documentComponents[curComponent.id].versions[curComponent.usersVersion].title

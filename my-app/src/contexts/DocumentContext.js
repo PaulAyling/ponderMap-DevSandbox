@@ -9,7 +9,6 @@ class DocumentContextProvider extends Component{
         super(props);
         this.state= {
             ...singleDocument,
-
             'userId':'1'        //hardcoded for now
         }
         this.updateState = this.updateState.bind(this);
@@ -34,11 +33,12 @@ class DocumentContextProvider extends Component{
         this.setState(newState)
         console.log('Context: this state', this.state)
     }
+    testVar = 'test'
     render(){
-            console.log('2 STATE', this.state.documentComponents[1].versions[1].title)
             return (
             <DocumentContext.Provider value={
                 {...this.state,
+                'testVar':this.testVar,
                 'updateState':this.updateState,
                 add,remove,edit
                 }}>
