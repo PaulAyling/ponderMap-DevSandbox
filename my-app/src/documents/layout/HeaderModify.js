@@ -9,6 +9,7 @@ function HeaderModify(props) {
     //Content
     const { title } = props.curContainerData
     console.log('props.curContainerData',props.curContainerData)
+
     //Style Variables
     const {header_container } = props.curContainerData.Style_defaults
     return (
