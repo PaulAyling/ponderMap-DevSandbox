@@ -1,4 +1,4 @@
-import React from 'react';
+import React , {useEffect, useState, useRef }from 'react';
 import { useContext } from 'react/cjs/react.development'
 import { DocumentContext } from '.././../contexts/DocumentContext'
 import { getComponent,updateComponent} from '../../data/dataFunctions/render'
@@ -7,48 +7,55 @@ import { v4 as uuidv4 } from 'uuid';
 const InputForm = (props) => {
 	const {id} = props.curContainerData
     var allcxt =  useContext(DocumentContext);
-
-    const {updateState,testVar} =  useContext(DocumentContext);
-	console.log('testVar',testVar)
-	
-	const curComponent = getComponent(id,allcxt.userId,allcxt.documentComponents)
-	// const title = allcxt.documentComponents[curComponent.id].versions[curComponent.usersVersion].title
+	const userId = allcxt.userId
+	const docComponents = allcxt.documentComponents
+    const {updateState} =  useContext(DocumentContext);
 	const title = allcxt.documentComponents[1].versions[1].title
+	
+	const searchInput = useRef(null)
 
-    const modifyItem = (event) =>{
+	useEffect(() => {
+		console.log("Effect");
+		searchInput.current.focus()
+	  }, []);
+
+
+    const modifyItem = (event,name,id,userId,docComponents) =>{
 			event.preventDefault();
 			console.log('modifyItem running......')
+			const curComponent = getComponent(id,userId,docComponents)
+			console.log('curComponent',curComponent)
 			const newComponent = updateComponent(curComponent,event.target.value,'title')
-			console.log('modifyItem N edw compo......',newComponent[1].versions[1].title)
 			//Update state with new value 
 			updateState(newComponent) 
-			// console.log('event.target.value',event.target.value)
-
         }
-
     const handleSubmit = (event) => {
             event.preventDefault();
             console.log('handlesubmit initiated xxxx',event.target)
         }; 
     return (
 		<form
-			onSubmit={handleSubmit} key={uuidv4()}>
+		onSubmit={handleSubmit} key={uuidv4()}>
 			<div className='header_text' >
-				<input
+				<input ref={searchInput}
 					type='text'
 					placeholder='Enter Descriptor'
 					value={title}
 					onChange={(event) => {
 						modifyItem(
 							event,
-							'name'
+							'name',
+							id,
+							userId,
+							docComponents
+
 						);
 					}}
 				/> 
 			</div>
-			<div>
+			{/* <div>
 				<h1>{allcxt.documentComponents[curComponent.id].versions[curComponent.usersVersion].title}</h1>
-			</div>
+			</div> */}
 		</form>
 	);
 };
