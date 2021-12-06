@@ -3,7 +3,7 @@ const allComponents =
 {
 	1: 
     {
-		id: 1,
+		component_id: 1,
 		url: "tbc",
         all_tags: ["lesiure", "sport", "machines"],
         usersVersion:{
@@ -33,7 +33,7 @@ const allComponents =
     },
     2: 
     {
-        id: 2,
+        component_id: 2,
         url: "https://en.wikipedia.org/wiki/Road_bicycle",
         all_tags: ["road", "sport"],
         usersVersion:{
@@ -53,7 +53,7 @@ const allComponents =
     },
     3: 
     {
-        id: 3,
+        component_id: 3,
         url: "https://en.wikipedia.org/wiki/Mountain_biking",
         all_tags: ["road", "sport"],
         usersVersion:{

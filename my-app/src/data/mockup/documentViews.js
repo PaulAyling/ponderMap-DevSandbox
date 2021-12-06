@@ -4,12 +4,13 @@
 const documentViews = 
     {   // ID 1 & 2 are both views of the same 'doc_id':1
         1:{
+        'doc_view_id':1,
         'all_component_ids':[1,2,3],
         'doc_id':1, 
         'component_hierachy':
             {
              1:{
-                'id':1,
+                'component_id':1,
                 'version_id':1,
                 'parent':null,
                 'children':[2,3],
@@ -17,7 +18,7 @@ const documentViews =
                 'level':'paragraph',
                 },
             2:{
-                'id':2,
+                'component_id':2,
                 'version_id':1,
                 'parent':1,
                 'children':[],
@@ -25,7 +26,7 @@ const documentViews =
                 'level':'word',
                 },
             3:{
-                'id':3,
+                'component_id':3,
                 'version_id':1,
                 'parent':1,
                 'children':[],
@@ -36,13 +37,14 @@ const documentViews =
         },
         2:
         {
+            'doc_view_id':2,
             'all_component_ids':[1,2],
             'doc_id':1,
             'component_hierachy':
             {
                 1:
                 {
-                   'id':1,
+                   'component_id':1,
                    'version_id':1,
                    'parent':null,
                    'children':[2],
@@ -51,7 +53,7 @@ const documentViews =
                 },
                2:   
                {
-                   'id':2,
+                   'component_id':2,
                    'version_id':1,
                    'parent':1,
                    'children':[],
