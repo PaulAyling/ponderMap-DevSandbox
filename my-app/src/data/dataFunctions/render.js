@@ -19,13 +19,6 @@ const getComponents = (docViewId) => {
 	}
 	return res;
 };
-const getUserDocument= (userId,allComponents) =>{
-	console.log('getUserDocument loading....')
-	console.log('ARG:userId:',userId)
-	console.log('ARG:allComponents:',allComponents)
-}
-
-
 //4. Get Component & version for a specific componentId & userId
 const getComponent = (componentId, userId,allComponents) => {
 	const component = allComponents[componentId];
@@ -97,14 +90,10 @@ const getChildrenComponents = (componentId, components, curDocMap) => {
 	return res;
 };
 
-
-
-
 export {
 	getCurDocIds,
 	getDocView,
 	getComponents,
-	getUserDocument,
 	getComponent,
 	updateComponent,
 	getCurLevel,
