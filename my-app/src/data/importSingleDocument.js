@@ -3,7 +3,7 @@ import {documents } from './dbMockup/documents'
 import {documentViews } from './dbMockup/documentViews'
 import { allComponents } from './dbMockup/allComponents'
 import { users } from './dbMockup/users'
-import { getComponents} from './dataFunctions/render'
+import { getComponents} from './dataFunctions/display/render'
 /* PURPOSE: import database data & create document data (for a single document)
 */
 //1. Create single_document

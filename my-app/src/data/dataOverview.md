@@ -1,3 +1,11 @@
+# ABOUT THE DATA STRUCTURE OF A SINGLE DOCUMENT
+1 document
+    * Can have many contributors
+    * One contributor can create 1 view of document
+    * The view is where the hierachy of the unique conpmonents is defined
+    * Components can have many versions
+    * A view can contain only one hierachy and 1 version of any unique component
+
 #  ABOUT DATA SOURCES
 There are 3 layers in the data for this app
 1. Database  (all data for all documents)
@@ -20,3 +28,5 @@ All thes user of this app with associated document views
 
 
 # 3. DOCUMENT FUNCTIONS
+    Display
+    Edit
