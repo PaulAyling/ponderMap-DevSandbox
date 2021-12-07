@@ -1,17 +1,15 @@
 # ABOUT THE DATA STRUCTURE OF A SINGLE DOCUMENT
-1 document
+Any Single document
     * Can have many contributors
-    * One contributor can create 1 view of document
-    * The view is where the hierachy of the unique conpmonents is defined
+    * One contributor can create 1 view of document. The view is where the hierachy of the unique conpmonents is defined
     * Components can have many versions
     * A view can contain only one hierachy and 1 version of any unique component
 
 #  ABOUT DATA SOURCES
 There are 3 layers in the data for this app
-1. Database  (all data for all documents)
-2. Document  (all data for a single document generated via api call and also some code to reformat data)
-3. Document Fuctions (all functions for manipulation of the document)
-
+1. Database             (all data for all documents)
+2. Document             (all data for a single document generated via api call and also some code to reformat data)
+3. Document Fuctions    (all functions for manipulation of the document)
 
 # 1. DATABASE
 below are the files that currently mock the database

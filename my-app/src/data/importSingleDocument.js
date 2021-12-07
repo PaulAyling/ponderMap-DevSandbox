@@ -4,6 +4,8 @@ import {documentViews } from './dbMockup/documentViews'
 import { allComponents } from './dbMockup/allComponents'
 import { users } from './dbMockup/users'
 import { getComponents} from './dataFunctions/display/render'
+// *TODO: document components contains an extra value called 0 - eliiminate this 
+
 /* PURPOSE: import database data & create document data (for a single document)
 */
 //1. Create single_document
