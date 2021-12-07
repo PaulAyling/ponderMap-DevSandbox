@@ -1,6 +1,6 @@
-import { allComponents } from "../mockup/allComponents";
-import { documentViews } from "../mockup/documentViews";
-import { users } from "../mockup/users";
+import { allComponents } from "../dbMockup/allComponents";
+import { documentViews } from "../dbMockup/documentViews";
+import { users } from "../dbMockup/users";
 
 // 1. Retrieve All DocViewIds for a given user
 const getCurDocIds = (userId) => {
