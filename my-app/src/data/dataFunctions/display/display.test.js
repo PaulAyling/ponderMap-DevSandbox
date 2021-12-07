@@ -18,8 +18,8 @@ describe.only('Test', () => {
         //   expect('').toStrictEqual('');
         // });
         
-    // it('20. Test Single document data', () => {
-    //     console.log(util.inspect(single_document,{ depth: null }))
-    //     expect('').toStrictEqual('');
-    // });
+    it('20. Test Single document data', () => {
+        console.log(util.inspect(single_document,{ depth: null }))
+        expect('').toStrictEqual('');
+    });
     });
