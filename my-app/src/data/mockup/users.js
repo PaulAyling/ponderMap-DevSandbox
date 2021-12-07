@@ -10,6 +10,6 @@ const users = {
     'name':'karoline',
     'documentViews':[2]
     },
-}
+    }
 
 export { users }
