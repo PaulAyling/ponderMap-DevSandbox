@@ -9,7 +9,7 @@ Any Single document
 There are 3 layers in the data for this app
 1. Database             (all data for all documents)
 2. Document             (all data for a single document generated via api call and also some code to reformat data)
-3. Document Fuctions    (all functions for manipulation of the document)
+3. Document Functions    (all functions for manipulation of the document)
 
 # 1. DATABASE
 below are the files that currently mock the database
@@ -17,7 +17,7 @@ below are the files that currently mock the database
 All the pondermap documents
 ## documentViews     | PK: doc_view_id   FK: {doc_id    , conponent_id}
 One document can have many views, one view per user. This is all the view for all the documents
-## allComponents    | PK: component_id   
+## allComponents     | PK: component_id   
 All the components for all the document views
 ## users.js             |PK: user_id     FK:doc_view_id
 All thes user of this app with associated document views
