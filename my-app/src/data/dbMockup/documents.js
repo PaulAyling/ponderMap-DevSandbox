@@ -5,10 +5,11 @@
 // Maps show how all the components are linked together
 const documents = {
     1:{
-    'id':1,
+    'doc_id':1,
     'created_by':1,
     'created_on':'2021-08-01',
-    'Document_title':'Pauls first pondermap'
+    'Document_title':'Pauls first pondermap',
+    'user_ids':[1,2]
     }
 }
 
