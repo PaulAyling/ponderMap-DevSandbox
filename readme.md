@@ -3,8 +3,8 @@ git init
 git add README.md
 git commit -m "first commit"
 git branch -M main
-git remote add origin https://github.com/PaulAyling/ponderMap-DevSandbox.git
+git remote add origin git@github.com:PaulAyling/ponderMap-DevSandbox.git
 git push -u origin main
 
 
-added here dfd
+added here dfd ffffrdfff

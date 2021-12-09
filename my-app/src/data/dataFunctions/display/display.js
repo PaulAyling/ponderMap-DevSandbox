@@ -1,6 +1,5 @@
 import { single_document } from "../../importSingleDocument";
-import {dictionaryItemCount} from '../utils/utility'
-
+//d
 const getUsersViewId = (user_id) =>{
     // 1. All doc_view_id for current user
         const userViewIds = single_document.document_users[user_id].documentViews
