@@ -1,6 +1,5 @@
-import { allComponents } from '../mockup/allComponents'
-import { documentViews } from '../mockup/documentViews'
-import {add,remove,edit} from '../dataFunctions/modify'
+ 
+import {modify } from './modify'
 
 
 describe.only('MODIFY SUITE', () => {
