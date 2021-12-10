@@ -1,26 +1,18 @@
 
+/* PURPOSE: import database data & create document data (for a single document)*/
 import {documents } from './dbMockup/documents'
 import {documentViews } from './dbMockup/documentViews'
-import { allComponents } from './dbMockup/allComponents'
 import { users } from './dbMockup/users'
-import { getComponents} from './dataFunctions/display/render'
+import { getComponents} from './functions/display/render'
+import {newComponent} from './'
 
-import { getUsersViewId } from '../data/dataFunctions/display/display'
-
-// *TODO: document components contains an extra value called 0 - eliiminate this 
-
-/* PURPOSE: import database data & create document data (for a single document)
-*/
-//1. Create single_document
-    const docId = 1
-    const userId = 1 // hardcoded - this is the user id of current user
-    const usersView = 1// this is the view for that user of the singleDocument
-    console.log('usersView',usersView)
+//1. Create Data for single_document
+    const docId = 1 //seelected by user
     //SIMULATED API QUERIES {these would be the queries to the database}
     const document = documents[docId]                       // Dcoument data
     const documentComponents = getComponents(docId)         // All components for document
     const documentUserIds = document.user_ids               // Document contributors
-    //Helper function (for documentUsers)
+    // Get documentUsers
     const getRecords = (filterValues,dict) => {
         var res = {};
         for (var i = 1; i <= filterValues.length; i++) {
@@ -29,14 +21,20 @@ import { getUsersViewId } from '../data/dataFunctions/display/display'
         return res;
     }
     const documentUsers = getRecords(documentUserIds,users) // Users data for the contributors
-    const single_document={
-        'header':document,
-        'document_users':documentUsers,
-        'document_views':documentViews, //layout of the components for a given view
-        'document_components':documentComponents, // All components that belong to document
-    }
-    console.log('single_document',single_document)
+//2. Create Classes for single document
 
-export {single_document} 
+
+
+
+
+//3. Create document Context Data
+    const singleDocument={
+        'header':document,
+        'documentUsers':documentUsers,
+        'documentViews':documentViews, //layout of the components for a given view
+        'documentComponents':documentComponents, // All components that belong to document
+    }
+
+export {singleDocument} 
 
 

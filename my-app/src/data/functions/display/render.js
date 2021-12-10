@@ -14,7 +14,7 @@ const getDocView = (docViewId) => {
 const getComponents = (docViewId) => {
 	const all_component_ids = documentViews[docViewId].all_component_ids;
 	var res = {};
-	for (var i = 0; i <= all_component_ids.length; i++) {
+	for (var i = 1; i <= all_component_ids.length; i++) {
 		res[i] = allComponents[i];
 	}
 	return res;

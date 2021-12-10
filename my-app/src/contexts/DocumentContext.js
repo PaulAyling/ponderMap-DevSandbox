@@ -1,15 +1,12 @@
 import {createContext, Component } from 'react'
-import {singleDocument} from '../data/mockup/singleDocument'
-import {add,remove,edit} from '../data/dataFunctions/modify'
+import {singleDocument} from '../data/importSingleDocument'
 
 export const DocumentContext = createContext()
-
 class DocumentContextProvider extends Component{
     constructor(props) {
         super(props);
         this.state= {
-            ...singleDocument,
-            'userId':'1'        //hardcoded for now
+            singleDocument
         }
         this.updateState = this.updateState.bind(this);
     }

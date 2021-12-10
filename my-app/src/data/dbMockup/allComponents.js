@@ -19,7 +19,6 @@ const allComponents =
 				image_url:
 					"https://bikexchange.com/wp-content/uploads/2020/12/bikes1212-e1630349513789.png",
 				notes: "tbc",
-				tags: ["lesiure", "sport"],
 			},
 			2: 
             {
@@ -27,7 +26,6 @@ const allComponents =
 				image_url:
 					"https://bikexchange.com/wp-content/uploads/2020/12/bikes1212-e1630349513789.png",
 				notes: "tbc",
-				tags: ["lesiure", "machines"],
 			},
 		}
     },
@@ -47,7 +45,6 @@ const allComponents =
                 image_url:
                     "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Look_795_30th_Anniversary_Dura-Ace_9100-Mavic_Custom_Build_%2830636542393%29.jpg/300px-Look_795_30th_Anniversary_Dura-Ace_9100-Mavic_Custom_Build_%2830636542393%29.jpg",
                 notes: "Road racing can be fun...",
-                tags: ["road", "sport"],
             }
         }
     },
@@ -68,7 +65,6 @@ const allComponents =
                     "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/MtnBiking_SedonaMag.jpg/250px-MtnBiking_SedonaMag.jpg",
                 notes:
                     "Mountain bikeing is more fun and very dangerous, and soo exckting!",
-                tags: ["lesiure", "sport", "extreme"],
             },
         },
     }
