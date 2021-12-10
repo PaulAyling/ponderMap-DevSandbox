@@ -11,7 +11,7 @@ class newComponent {
         this.allTags = allTags
     }
     // create a method to gnerate the new node to add to the database
-    newComponentNode(param){
+    newComponentNode(){
       //create the node that gets added to the components data
       const res = {
         componentId:this.newId,
@@ -26,10 +26,10 @@ class newComponent {
       }
       return res
     }
-    newViewNode(param){
+    newViewNode(){
       //create the node that gets added to the view data
       const res = {
-        c:this.newId,
+        componentId:this.newId,
         parentId:this.parentId,
         children:[],
         siblings:[],

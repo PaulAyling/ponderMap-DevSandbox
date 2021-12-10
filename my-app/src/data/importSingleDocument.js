@@ -35,7 +35,6 @@ import {newComponent} from '../data/classes/contextClasses'
         'documentComponents':documentComponents, // All components that belong to document
         'newComponent':newComponent
     }
-
 export {singleDocument} 
 
 
