@@ -4,14 +4,14 @@ import {documents } from './dbMockup/documents'
 import {documentViews } from './dbMockup/documentViews'
 import { users } from './dbMockup/users'
 import { getComponents} from './functions/display/render'
-import {newComponent} from './'
+import {newComponent} from '../data/classes/contextClasses'
 
 //1. Create Data for single_document
     const docId = 1 //seelected by user
     //SIMULATED API QUERIES {these would be the queries to the database}
     const document = documents[docId]                       // Dcoument data
     const documentComponents = getComponents(docId)         // All components for document
-    const documentUserIds = document.user_ids               // Document contributors
+    const documentUserIds = document.userIds               // Document contributors
     // Get documentUsers
     const getRecords = (filterValues,dict) => {
         var res = {};
@@ -33,6 +33,7 @@ import {newComponent} from './'
         'documentUsers':documentUsers,
         'documentViews':documentViews, //layout of the components for a given view
         'documentComponents':documentComponents, // All components that belong to document
+        'newComponent':newComponent
     }
 
 export {singleDocument} 

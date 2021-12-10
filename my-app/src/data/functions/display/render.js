@@ -12,9 +12,9 @@ const getDocView = (docViewId) => {
 };
 //3. Get all the components for given docViewId
 const getComponents = (docViewId) => {
-	const all_component_ids = documentViews[docViewId].all_component_ids;
+	const allComponentIds = documentViews[docViewId].allComponentIds;
 	var res = {};
-	for (var i = 1; i <= all_component_ids.length; i++) {
+	for (var i = 1; i <= allComponentIds.length; i++) {
 		res[i] = allComponents[i];
 	}
 	return res;

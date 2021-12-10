@@ -4,31 +4,31 @@
 const documentViews = 
     {   // ID 1 & 2 are both views of the same 'doc_id':1
         1:{
-        'doc_view_id':1,
-        'all_component_ids':[1,2,3],
-        'doc_id':1, 
-        'component_hierachy':
+        'docViewId':1,
+        'allComponentIds':[1,2,3],
+        'docId':1, 
+        'componentHierachy':
             {
              1:{
-                'component_id':1,
-                'version_id':1,
-                'parent':null,
+                'componentId':1,
+                'versionId':1,
+                'parentId':null,
                 'children':[2,3],
                 'siblings':[],
                 'level':'paragraph',
                 },
             2:{
-                'component_id':2,
-                'version_id':1,
-                'parent':1,
+                'componentId':2,
+                'versionId':1,
+                'parentId':1,
                 'children':[],
                 'siblings':[],
                 'level':'word',
                 },
             3:{
-                'component_id':3,
-                'version_id':1,
-                'parent':1,
+                'componentId':3,
+                'versionId':1,
+                'parentId':1,
                 'children':[],
                 'siblings':[],
                 'level':'word',
@@ -37,32 +37,31 @@ const documentViews =
         },
         2:
         {
-            'doc_view_id':2,
-            'all_component_ids':[1,2],
-            'doc_id':1,
-            'component_hierachy':
+            'docViewId':2,
+            'allComponentIds':[1,2],
+            'docId':1,
+            'componentHierachy':
             {
                 1:
                 {
-                   'component_id':1,
-                   'version_id':1,
-                   'parent':null,
+                   'componentId':1,
+                   'versionId':1,
+                   'parentId':null,
                    'children':[2],
                    'siblings':[],
                    'level':'paragraph',
                 },
                2:   
                {
-                   'component_id':2,
-                   'version_id':1,
-                   'parent':1,
+                   'componentId':2,
+                   'versionId':1,
+                   'parentId':1,
                    'children':[],
                    'siblings':[],
                    'level':'word',
                }
            }, 
         },
-
     }    
 
 export  { documentViews }

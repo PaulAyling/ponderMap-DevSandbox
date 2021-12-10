@@ -1,23 +1,26 @@
+import { v4 as uuidv4 } from 'uuid';
+
 class newComponent {
-    constructor(parentId,url,title,image_url,notes,all_tags){
-        this.newId = uuidv4()
+    constructor(parentId,newId,url,title,imageUrl,notes,allTags){
+        this.parentId = parentId,
+        this.newId = newId
         this.url = url,
         this.title = title,
-        this.image_url = image_url
+        this.imageUrl = imageUrl
         this.notes= notes
-        this.all_tags = all_tags
+        this.allTags = allTags
     }
     // create a method to gnerate the new node to add to the database
     newComponentNode(param){
       //create the node that gets added to the components data
       const res = {
-        component_id:this.newId,
+        componentId:this.newId,
         url:this.url,
-        all_tags:this.all_tags,
+        allTags:this.all_tags,
         usersVersion:{1:{'userId':1,'VersionId':1}},
         versions:{1:{
           title:this.title,
-          image_url:this.image_url,
+          imageUrl:this.imageUrl,
           notes:this.notes,
         }}
       }
@@ -26,11 +29,11 @@ class newComponent {
     newViewNode(param){
       //create the node that gets added to the view data
       const res = {
-        component_id:this.newId,
-        parent_id:this.parent_id,
+        c:this.newId,
+        parentId:this.parentId,
         children:[],
         siblings:[],
-        level:None,
+        level:null,
         }
       
       return res
