@@ -32,24 +32,38 @@ const add = (parentId,newComponent) =>{
 
 }
 const remove = (componentId) =>{
-    console.log('remove running.....removing ID:',componentId)
-    // From the componentViews
-    const documentViews = singleDocument.documentViews
-    const usersViewId = getUsersViewId()
-    const usersView = documentViews[usersViewId]
-    console.log()
-    var usersViewsComponents = usersView.componentHierachy
-    // remove the component from the parents children list
+    // A. Create data
+        // 1. Get usersViewid
+        // 2. Get userView
+        // 3. Get Components in usersView
+    // B. Remove components
+        // 1. Delete from UsersView
+        // 2. Remove the id from parents child
+        // 3. Delete from componentView
 
-    const componentsParentId = usersViewsComponents[componentId].parentId
-    console.log('componentsParentId',componentsParentId)
+    // A. Create data
+        // 1. Get usersViewid
+        const usersViewId = getUsersViewId()
+        // 2. Get userView
+        const documentViews = singleDocument.documentViews
+        const usersView = documentViews[usersViewId]
+        // 3. Get Components in usersView
+        var usersViewsComponents = usersView.componentHierachy
+    // B. Remove components
+        // 1. Remove the id from parents child
+            //Get parentID
+            //Get parents children
+            //Remove currentId from childrens list
+            //update usersView with new children list
+        const componentsParentId = usersViewsComponents[componentId].parentId
+        // const newChildren = removeValue(usersViewsComponents,3)
+        
+        
+        
+        // 2. Delete from UsersView
+        // 3. Delete from componentView
 
-
-    
-    // remove component
-    console.log('usersViewsComponents:',usersViewsComponents)
-    const newUsersViewComponents = removeValue(usersViewsComponents,3)
-    console.log('newUsersViewComponents:',newUsersViewComponents)
+ .log('newUsersViewComponents:',newUsersViewComponents)
     
     
 
