@@ -1,8 +1,6 @@
- import {add, modify } from './modify'
+ import {add, remove, modify } from './modify'
  import { v4 as uuidv4 } from 'uuid';
  import { singleDocument } from '../../importSingleDocument';
-
-
 const util = require('util')
 
 describe.only('MODIFY SUITE', () => {
@@ -17,7 +15,13 @@ describe.only('MODIFY SUITE', () => {
     'short notes',                  //notes
     ['bikes','transport']);         //tags
     const newState = add(1,newComp)
-    console.log('newState',util.inspect(newState,{ depth: null }))
+    // console.log('newState',util.inspect(newState,{ depth: null }))
+    expect('').toStrictEqual('');
+  });
+  it('2 Remove ', () => {
+  //Create New Object
+    const newState = remove(3)
+    // console.log('Remove Running....',util.inspect('TeST',{ depth: null }))
     expect('').toStrictEqual('');
   });
 });

@@ -1,3 +1,5 @@
+// TODO THESE FUNSTIONS WILL BE OBSOLETED AND MOVED TO OTHER FILES IN TIME
+
 import { allComponents } from "../../dbMockup/allComponents";
 import { documentViews } from "../../dbMockup/documentViews";
 import { users } from "../../dbMockup/users";
