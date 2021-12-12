@@ -1,4 +1,4 @@
-const removeValue= (arr,valToRemove)=>{
+const arrayRemoveValue= (arr,valToRemove)=>{
 var res = []
 for (var i = 0, len = arr.length; i < len; i++) { 
     if (arr[i]!== valToRemove) { 
@@ -9,4 +9,4 @@ for (var i = 0, len = arr.length; i < len; i++) {
 return res
 }
 
-export {removeValue}
+export {arrayRemoveValue}
