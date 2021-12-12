@@ -43,23 +43,26 @@ const remove = (componentId) =>{
 
     // A. Create data
         // 1. Get usersViewid
-        const usersViewId = getUsersViewId()
-        // 2. Get userView
-        const documentViews = singleDocument.documentViews
-        const usersView = documentViews[usersViewId]
-        // 3. Get Components in usersView
-        var usersViewsComponents = usersView.componentHierachy
+            const usersViewId = getUsersViewId()
+            // 2. Get userView
+            const documentViews = singleDocument.documentViews
+            const usersView = documentViews[usersViewId]
+            console.log('usersView',usersView)
+            // 3. Get Components in usersView
+            var usersViewsComponents = usersView.componentHierachy
     // B. Remove components
         // 1. Remove the id from parents child
             //Get parentID
+            const componentsParentId = usersViewsComponents[componentId].parentId
             //Get parents children
+            const parentChildren = usersView.componentHierachy[componentsParentId].children
             //Remove currentId from childrens list
-            //update usersView with new children list
-        const componentsParentId = usersViewsComponents[componentId].parentId
-        // const newChildren = removeValue(usersViewsComponents,3)
-        
-        
-        
+            const newParentChildren = removeValue(parentChildren,componentId)
+            //Create newUsersView with new children list
+            const newParentComponent = {...usersView.componentHierachy[componentsParentId],'children':newParentChildren}
+            const newUsersViewOCmponentHierachy = {...usersView.componentHierachy,[newParentComponent.componentId]:newParentComponent}
+            const newUsersView = {...usersView, 'componentHierachy':newUsersViewOCmponentHierachy}   
+            console.log('newUsersView',util.inspect(newUsersView,{ depth: null }))     
         // 2. Delete from UsersView
         // 3. Delete from componentView
 
