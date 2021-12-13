@@ -1,35 +1,9 @@
 import {singleDocument} from '../../importSingleDocument'
 import { getUsersViewId } from '../utils/utils'
-import { arrayRemoveValue } from '../utils/array_fn'
+import { arrayRemoveValue,arrayIsValueInArray } from '../utils/array_fn'
 const util = require('util')
-
 const contextMock = singleDocument
 
-const add = (parentId,newComponent) =>{
-    //1 ADD NEW COMPONENTS
-    //A Create & Add newComponentNode
-    const newComponentNode = newComponent.newComponentNode('dd')
-    const documentComponents = singleDocument.documentComponents
-        const newDocumentComponents = { ...documentComponents, [newComponentNode.componentId]:newComponentNode}
-    //B Create & Add newViewNode    
-    const newViewNode = newComponent.newViewNode()
-    const documentViews = singleDocument.documentViews
-    const usersViewId = getUsersViewId()
-    const usersView = documentViews[usersViewId]
-    const newDocumentViewsComponentHierachy = { ...usersView.componentHierachy, [newComponentNode.componentId]:newViewNode}
-    const newDocumentView = {...usersView, 'componentHierachy':newDocumentViewsComponentHierachy}
-        const newDocumentViews = {...documentViews, [usersViewId]:newDocumentView}
-    // console.log('newDocumentViews',newDocumentViews)
-    // 2. UPDATE PARENT
-    contextMock.documentViews[usersViewId].componentHierachy[parentId].children.push(newComponentNode.componentId)
-    const res = {
-        ...contextMock,
-        'documentComponents':newDocumentComponents,
-        'documentViews':newDocumentViews
-    }
-    return res
-
-}
 const remove = (componentId) =>{
     // A. Create data
     // B. Create new parts with removed components
@@ -43,6 +17,8 @@ const remove = (componentId) =>{
             const usersView = documentViews[usersViewId]
         // 3. Get Components in usersView
             var usersViewsComponents = usersView.componentHierachy
+            // console.log('usersViewsComponents',usersViewsComponents)
+            
     // B. Create new parts with removed components
         // 1. Remove the id from parents child
             //Get parentID
@@ -58,30 +34,19 @@ const remove = (componentId) =>{
         // 2. Delete from documentViews
             //delete from usersView
             const newUsersViews2 = JSON.parse(JSON.stringify(newUsersViews))
-            delete newUsersViews.componentHierachy[componentId]
+            delete newUsersViews2.componentHierachy[componentId]
             // Create new documentViews
             const newDocumentViews = {...documentViews,[usersViewId]:newUsersViews}
         // 3. Delete from componentView
             // console.log('usersViewsComponents',usersViewsComponents)
             delete usersViewsComponents[componentId]
     // C. Construct Output
-        // console.log('contextMock',contextMock)
-        // console.log('contextMock',contextMock)
         // console.log('usersViewsComponents',usersViewsComponents)
-            // const res = {...contextMock,documentComponent}
-        // 
-    
-    
-    
-    
-    const newState = 'newstate'
-    return newState
-}
-const edit = (newContent,fieldName,components) =>{
-    // console.log('Edit running.....')
-    const newState = 'newstate'
-    return newState
+        //Leave deleted component in data becuase it may be used by someone else
+        const res = {...contextMock,'documentViews':newDocumentViews}
+    return res
 }
 
 
-export {add,remove,edit}
+
+export {remove}

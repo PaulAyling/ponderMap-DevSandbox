@@ -1,4 +1,6 @@
- import {add, remove, modify } from './modify'
+ import {add } from './add'
+ import { edit } from './edit'
+ import { remove } from './remove'
  import { v4 as uuidv4 } from 'uuid';
  import { singleDocument } from '../../importSingleDocument';
 const util = require('util')
@@ -21,7 +23,13 @@ describe.only('MODIFY SUITE', () => {
   it('2 Remove ', () => {
   //Create New Object
     const newState = remove(3)
-    // console.log('Remove Running....',util.inspect('TeST',{ depth: null }))
+    // console.log('Remove Running....',util.inspect(newState,{ depth: null }))
+    expect('').toStrictEqual('');
+  });
+  it('2 Edit ', () => {
+  //Edit Existing Object
+    const newState = edit('title','This title has been updated',3)
+    // console.log('Remove Running....',util.inspect(newState,{ depth: null }))
     expect('').toStrictEqual('');
   });
 });

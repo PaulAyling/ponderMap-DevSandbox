@@ -9,4 +9,13 @@ for (var i = 0, len = arr.length; i < len; i++) {
 return res
 }
 
-export {arrayRemoveValue}
+const arrayIsValueInArray = (arr,val)=>{
+    for (var i = 0, len = arr.length; i < len; i++) { 
+        if (arr[i] == val) {return true
+        }
+    }
+    return false
+}
+
+
+export { arrayRemoveValue, arrayIsValueInArray }
