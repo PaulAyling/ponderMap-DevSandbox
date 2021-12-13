@@ -45,7 +45,7 @@ const getUsersVersion = (usersVersionDict) =>{
     for (const [key, value] of Object.entries(usersVersionDict)) {
         console.log('DO A LOOP',key, value);
         if(key == userId){
-            return value
+            return value.versionId
         }
       }
 

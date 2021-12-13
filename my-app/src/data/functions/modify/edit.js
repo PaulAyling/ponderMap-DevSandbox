@@ -5,6 +5,7 @@ import {currentUser} from '../../dbMockup/currentUser'
 
 const util = require('util')
 const contextMock = singleDocument
+console.log(contextMock)
 
 const edit = (fieldToUpdate,newContent,componentId) =>{
     const validFieldsToUpdate = ['title','imageUrl','notes']
@@ -14,17 +15,27 @@ const edit = (fieldToUpdate,newContent,componentId) =>{
 
     // A. Create the Data
         // get documentCompoents
-        const documentComponents = contextMock.documentComponents
-        // console.log('documentComponents',documentComponents)
+            const documentComponents = contextMock.documentComponents
+            // console.log('documentComponents',documentComponents)
         // Get the documentComponent
-        const documentComponent = contextMock.documentComponents[componentId]
-        // console.log('documentComponent',documentComponent)  
+            const documentComponent = contextMock.documentComponents[componentId]
+            // console.log('documentComponent',documentComponent)  
         // Identify document version
         const docVersions = documentComponent.usersVersion
         const versionId = getUsersVersion(docVersions)
-        console.log('versionId',versionId.versionId)
+        // console.log('versionId',versionId)
+        // Get the usersComponent
+        const usersComponent = documentComponent.versions[versionId]
+        // console.log('usersComponent',usersComponent)
     // B. create new data parts
-        // create new compnent (with new newContent for the fieldToUpdate)
+        // update field
+        usersComponent[fieldToUpdate]  = newContent
+        // console.log('usersComponent',usersComponent)
+        //update documentComponent
+        const newDocumentComponentsVersions = {...documentComponent.versions, [versionId]:usersComponent}
+        console.log('documentComponent',documentComponent)
+        console.log('newDocumentComponentsVersions',newDocumentComponentsVersions)
+        //update the 
     // C. Create final output
         
 

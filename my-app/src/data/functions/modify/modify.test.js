@@ -28,7 +28,7 @@ describe.only('MODIFY SUITE', () => {
   });
   it('2 Edit ', () => {
   //Edit Existing Object
-    const newState = edit('title','This title has been updated',3)
+    const newState = edit('title','This title has been updated',1)
     // console.log('Remove Running....',util.inspect(newState,{ depth: null }))
     expect('').toStrictEqual('');
   });
