@@ -43,7 +43,6 @@ const getUsersComponents = (docViewId) => {
 const getUsersVersion = (usersVersionDict) =>{
     const userId = currentUser.userId
     for (const [key, value] of Object.entries(usersVersionDict)) {
-        console.log('DO A LOOP',key, value);
         if(key == userId){
             return value.versionId
         }
