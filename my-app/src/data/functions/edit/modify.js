@@ -7,7 +7,7 @@ const contextMock = singleDocument
 
 const add = (parentId,newComponent) =>{
     //1 ADD NEW COMPONENTS
-    //A create & Add newComponentNode
+    //A Create & Add newComponentNode
     const newComponentNode = newComponent.newComponentNode('dd')
     const documentComponents = singleDocument.documentComponents
         const newDocumentComponents = { ...documentComponents, [newComponentNode.componentId]:newComponentNode}
@@ -32,24 +32,18 @@ const add = (parentId,newComponent) =>{
 }
 const remove = (componentId) =>{
     // A. Create data
-        // 1. Get usersViewid
-        // 2. Get userView
-        // 3. Get Components in usersView
-    // B. Remove components
-        // 1. Delete from UsersView
-        // 2. Remove the id from parents child
-        // 3. Delete from componentView
+    // B. Create new parts with removed components
     // C. Construct Output
     
     // A. Create data
         // 1. Get usersViewid
-        const usersViewId = getUsersViewId()
+            const usersViewId = getUsersViewId()
         // 2. Get userView
-        const documentViews = singleDocument.documentViews
-        const usersView = documentViews[usersViewId]
+            const documentViews = singleDocument.documentViews
+            const usersView = documentViews[usersViewId]
         // 3. Get Components in usersView
-        var usersViewsComponents = usersView.componentHierachy
-    // B. Remove components
+            var usersViewsComponents = usersView.componentHierachy
+    // B. Create new parts with removed components
         // 1. Remove the id from parents child
             //Get parentID
             const componentsParentId = usersViewsComponents[componentId].parentId
