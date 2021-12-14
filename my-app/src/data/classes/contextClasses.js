@@ -1,11 +1,9 @@
-import { v4 as uuidv4 } from 'uuid';
-
 class newComponent {
     constructor(parentId,newId,url,title,imageUrl,notes,allTags){
-        this.parentId = parentId,
+        this.parentId = parentId
         this.newId = newId
-        this.url = url,
-        this.title = title,
+        this.url = url
+        this.title = title
         this.imageUrl = imageUrl
         this.notes= notes
         this.allTags = allTags
@@ -39,5 +37,4 @@ class newComponent {
       return res
     }
 }
-
-    export {newComponent }
+export {newComponent }
