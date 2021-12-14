@@ -11,11 +11,11 @@ const Card= ()=> {
     const increment = () => {
         setCount(count + 1)
     }
-
+    const startingId = 1
     return (
     <div>
         <h2>count {count}</h2>
-        <CardHeader onClick={increment} count={count} singleDocument={singleDocument}/>
+        <CardHeader onClick={increment} count={count} singleDocument={singleDocument} id={startingId}/>
     </div>
     );
 
