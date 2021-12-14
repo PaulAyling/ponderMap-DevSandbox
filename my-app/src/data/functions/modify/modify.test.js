@@ -5,7 +5,7 @@
  import { singleDocument } from '../../importSingleDocument';
 const util = require('util')
 
-describe.only('MODIFY SUITE', () => {
+describe.skip('MODIFY SUITE', () => {
   it('1 Add ', () => {
   //Create New Object
   const newComp = new singleDocument.newComponent(

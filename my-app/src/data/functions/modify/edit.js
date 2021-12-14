@@ -1,7 +1,6 @@
 import {singleDocument} from '../../importSingleDocument'
 import { getUsersVersion } from '../utils/utils'
 import { arrayIsValueInArray } from '../utils/array_fn'
-import {currentUser} from '../../dbMockup/currentUser'
 
 const util = require('util')
 const contextMock = singleDocument

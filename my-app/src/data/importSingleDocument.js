@@ -5,6 +5,7 @@ import {documentViews } from './dbMockup/documentViews'
 import { users } from './dbMockup/users'
 import { getComponents} from './functions/display/render'
 import {newComponent} from '../data/classes/contextClasses'
+import {currentUser} from './dbMockup/currentUser'
 
 //1. Create Data for single_document
     const docId = 1 //seelected by user
@@ -32,8 +33,9 @@ import {newComponent} from '../data/classes/contextClasses'
         'header':document,
         'documentUsers':documentUsers,
         'documentViews':documentViews, //layout of the components for a given view
-        'documentComponents':documentComponents, // All components that belong to document
-        'newComponent':newComponent
+        'documentComponents':documentComponents, // All components that belong to document,
+        'newComponent':newComponent,
+        'currentUserId':currentUser.userId
     }
 export {singleDocument} 
 

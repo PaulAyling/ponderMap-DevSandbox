@@ -1,14 +1,10 @@
 import {singleDocument} from '../../importSingleDocument'
 import { getUsersViewId } from '../utils/utils'
-import { arrayRemoveValue,arrayIsValueInArray } from '../utils/array_fn'
+import { arrayRemoveValue } from '../utils/array_fn'
 const util = require('util')
 const contextMock = singleDocument
 
 const remove = (componentId) =>{
-    // A. Create data
-    // B. Create new parts with removed components
-    // C. Construct Output
-    
     // A. Create data
         // 1. Get usersViewid
             const usersViewId = getUsersViewId()
@@ -17,8 +13,7 @@ const remove = (componentId) =>{
             const usersView = documentViews[usersViewId]
         // 3. Get Components in usersView
             var usersViewsComponents = usersView.componentHierachy
-            // console.log('usersViewsComponents',usersViewsComponents)
-            
+            // console.log('usersViewsComponents',usersViewsComponents)         
     // B. Create new parts with removed components
         // 1. Remove the id from parents child
             //Get parentID
@@ -46,7 +41,4 @@ const remove = (componentId) =>{
         const res = {...contextMock,'documentViews':newDocumentViews}
     return res
 }
-
-
-
 export {remove}
