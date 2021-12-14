@@ -1,7 +1,7 @@
-import BtnAdd from '../furniture/buttons/Btn_add'
-import BtnDelete from '../furniture/buttons/Btn_delete'
-import BtnUrl from '../furniture/buttons/Btn_url'
-import BtnShare from '../furniture/buttons/Btn_share'
+import BtnAdd from './buttons/Btn_add'
+import BtnDelete from './buttons/Btn_delete'
+import BtnUrl from './buttons/Btn_url'
+import BtnShare from './buttons/Btn_share'
 
 function TitleToolbar(props) {
     const { containerFunctions, containerState,containerData  } = props

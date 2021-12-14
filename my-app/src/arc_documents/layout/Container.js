@@ -2,12 +2,9 @@ import  { useState, useContext, useEffect } from 'react'
 import { DocumentContext } from '../../contexts/DocumentContext'
 import { getComponent } from '../../data/dataFunctions/render'
 
-
-
-
 import HeaderModify from './HeaderModify'
 import Header from './Header'
-import Body from '../layout/Body'
+import Body from './Body'
 import { Btn_visable, Style_defaults } from '../components/config'
 import { getCurLevel} from '../../data/dataFunctions/render'
 import { v4 as uuidv4 } from 'uuid';

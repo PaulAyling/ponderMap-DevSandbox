@@ -1,7 +1,7 @@
 import React from 'react'
 import { getCurLevel,getChildrenComponents} from '../../data/dataFunctions/render'
-import Tags from '../furniture//tags'
-import Container from '../layout/Container'
+import Tags from '../furniture/tags'
+import Container from './Container'
 import { v4 as uuidv4 } from 'uuid';
 
 

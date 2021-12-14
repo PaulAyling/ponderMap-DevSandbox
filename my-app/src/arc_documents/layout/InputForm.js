@@ -1,6 +1,6 @@
 import React , {useEffect, useRef }from 'react';
 import { useContext } from 'react/cjs/react.development'
-import { DocumentContext } from '.././../contexts/DocumentContext'
+import { DocumentContext } from '../../contexts/DocumentContext'
 import { getComponent,updateComponent} from '../../data/dataFunctions/render'
 import { v4 as uuidv4 } from 'uuid';
  
