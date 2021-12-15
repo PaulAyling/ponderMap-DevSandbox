@@ -17,7 +17,7 @@ class DocumentContextProvider extends Component{
                 'documentViews':singleDocument.documentViews, //layout of the components for a given view
                 'documentComponents':singleDocument.documentComponents
             }, // All components that belong to document}
-            'authenticatedUser':authenticatedUser.userId,
+            'authenticatedUserId':authenticatedUser.userId,
             // 'utils':{newComponent,add,remove,edit}
             'utils':{add,remove,edit, newComponent}    
         }
@@ -36,7 +36,21 @@ class DocumentContextProvider extends Component{
         }
         this.setState(newState)
     }
+
+    
+    
     render(){
+        // THIS SECTION IS TO TEST THE CONTEXT AGAINST THE MIMIC USES IN JEST TESTS
+        // const stateMimic = {
+        //     'document':{
+        //         'header':singleDocument.header,
+        //         'documentUsers':singleDocument.documentUsers,
+        //         'documentViews':singleDocument.documentViews, //layout of the components for a given view
+        //         'documentComponents':singleDocument.documentComponents
+        //     }, // All components that belong to document}
+        //     'authenticatedUserId':authenticatedUser.userId,
+        // }
+        // console.log('stateMimic STATE:', stateMimic)
         console.log('CONTEXT STATE:', this.state)
             return (
             <DocumentContext.Provider value={

@@ -1,11 +1,11 @@
-import { singleDocument } from "../../importSingleDocument";
 import { getUsersVersion, getUsersViewId } from '../utils/utils'
 
+
 const util = require('util')
-const getComponent = (componentId)=>{
+const getComponent = (componentId,documentState)=>{
     // A. Get data form curent user / current version
-        const currentUser = singleDocument.currentUserId
-        const curComponent = singleDocument.documentComponents[componentId]
+        const currentUser = documentState.currentUserId
+        const curComponent = documentState.document.documentComponents[componentId]
         
         const docVersions = curComponent.usersVersion
         const versionId = getUsersVersion(docVersions)
@@ -23,11 +23,11 @@ const getComponent = (componentId)=>{
         }
         return res  
     }
-    const getChildrenIds = (id)=>{
+    const getChildrenIds = (id,documentState)=>{
         // 1. Get usersViewid
         const usersViewId = getUsersViewId()
         // 2. Get userView
-            const documentViews = singleDocument.documentViews
+            const documentViews = documentState.documentViews
             const usersView = documentViews[usersViewId]
         // 3. Get Components in usersView
             const usersViewsComponents = usersView.componentHierachy
