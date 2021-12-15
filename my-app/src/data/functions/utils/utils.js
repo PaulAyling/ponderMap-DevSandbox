@@ -32,14 +32,6 @@ const getUsersViewId = () =>{
         return getUsersView(docViewsIds, userViewIds)
 }
 
-const getUsersComponents = (docViewId) => {
-	const all_component_ids = documentViews[docViewId].all_component_ids;
-	var res = {};
-	for (var i = 0; i <= all_component_ids.length; i++) {
-		res[i] = allComponents[i];
-	}
-	return res;
-};
 const getUsersVersion = (usersVersionDict) =>{
     const userId = currentUser.userId
     for (const [key, value] of Object.entries(usersVersionDict)) {
@@ -49,5 +41,35 @@ const getUsersVersion = (usersVersionDict) =>{
       }
 
 }
+const getComponentLevel = (componentId) =>{
+    // // A. Get Data
+    //   // 1. Get usersViewid
+    //   const usersViewId = getUsersViewId()
+    //   // 2. Get userView
+    //       const documentViews = singleDocument.documentViews
+    //       const usersView = documentViews[usersViewId]
+    //   // 3. Get Components in usersView
+    //       var usersViewsComponents = usersView.componentHierachy
+    //       // console.log('usersViewsComponents',usersViewsComponents)    
+    // // B. Calc level
+    //     if(usersViewsComponents[componentId].parentId == null)
+    //     return usersViewsComponents
 
-export {getUsersViewId,getUsersComponents,getUsersVersion}
+
+
+        // else {
+        //     parent1 = usersViewsComponents[componentId].parentId
+        //     if(usersViewsComponents[parent1].parentId == null)
+        //     return 1
+        // }
+        // else {
+        //     parent1 = usersViewsComponents[componentId].parentId
+        //     parent2 = usersViewsComponents[parent1].parentI
+        //     if(usersViewsComponents[parent2].parentId == null)
+        //     return 1
+        // }
+        // return 1
+    // return usersViewsComponents
+}
+
+export {getUsersViewId,getUsersVersion, getComponentLevel}

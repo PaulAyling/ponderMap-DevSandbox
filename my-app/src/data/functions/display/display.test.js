@@ -6,7 +6,7 @@ const util = require('util')
 describe.only('Test', () => {
     it('1. getComponent', () => {
         const curComponent = getComponent(1)
-        //console.log('1. TEST getComponet:',util.inspect(curComponent,{ depth: null }))
+        console.log('1. TEST getComponet:',util.inspect(curComponent,{ depth: null }))
         expect('').toStrictEqual('');
     });
     it('2. getChildrenIds', () => {

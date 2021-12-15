@@ -1,5 +1,8 @@
 import {createContext, Component } from 'react'
 import {singleDocument} from '../data/importSingleDocument'
+import { add } from '../data/functions/modify/add'
+import { remove } from '../data/functions/modify/remove'
+import { edit } from '../data/functions/modify/edit'
 
 export const DocumentContext = createContext()
 class DocumentContextProvider extends Component{
@@ -23,6 +26,7 @@ class DocumentContextProvider extends Component{
         this.setState(newState)
     }
     render(){
+        console.log('STATE:', this.state)
             return (
             <DocumentContext.Provider value={
                 {...this.state,
