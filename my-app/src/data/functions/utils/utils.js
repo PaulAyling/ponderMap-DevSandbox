@@ -1,5 +1,5 @@
 import {singleDocument} from '../../importSingleDocument'
-import {currentUser} from '../../dbMockup/currentUser'
+import {authenticatedUser} from '../../dbMockup/authenticatedUser'
 
 const getUsersViewId = () =>{
     //Helper functions
@@ -7,7 +7,7 @@ const getUsersViewId = () =>{
         return Object.keys(dict).length
     }
     // 1. All doc_view_id for current user
-        const userId = currentUser.userId
+        const userId = authenticatedUser.userId
         const userViewIds = singleDocument.documentUsers[userId].documentViews
     // 2. All doc_view_id ids for current document
         const getDocViewIds = (documentViews) =>{
@@ -33,7 +33,7 @@ const getUsersViewId = () =>{
 }
 
 const getUsersVersion = (usersVersionDict) =>{
-    const userId = currentUser.userId
+    const userId = authenticatedUser.userId
     for (const [key, value] of Object.entries(usersVersionDict)) {
         if(key == userId){
             return value.versionId
@@ -41,6 +41,7 @@ const getUsersVersion = (usersVersionDict) =>{
       }
 
 }
+
 const getComponentLevel = (componentId) =>{
     // // A. Get Data
     //   // 1. Get usersViewid

@@ -4,7 +4,6 @@ import CardHeader from './cardHeader'
  
 const Card= ()=> {
     const document = useContext(DocumentContext)
-    console.log(document)
 
 
     const startingId = 1
