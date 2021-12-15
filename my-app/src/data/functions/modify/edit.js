@@ -5,16 +5,16 @@ import { arrayIsValueInArray } from '../utils/array_fn'
 const util = require('util')
 const contextMock = singleDocument
 
-const edit = (fieldToUpdate,newContent,componentId) =>{
+const edit = (fieldToUpdate,newContent,componentId,document) =>{
     const validFieldsToUpdate = ['title','imageUrl','notes']
     if(arrayIsValueInArray(validFieldsToUpdate,'title') != true){
         return "Error! Field Name is not valid"
     } else{
     // A. Create the Data
         // get documentComponents
-            const documentComponents = contextMock.documentComponents
+            const documentComponents = document.documentComponents
         // Get the documentComponent
-            const documentComponent = contextMock.documentComponents[componentId]
+            const documentComponent = document.documentComponents[componentId]
         // Identify document version
             const docVersions = documentComponent.usersVersion
             const versionId = getUsersVersion(docVersions)
@@ -28,7 +28,7 @@ const edit = (fieldToUpdate,newContent,componentId) =>{
             const newDocumentComponent = {...documentComponent,'usersVersions':newDocumentComponentsVersions }
             const newDocumentComponents = {...documentComponents,[componentId]:newDocumentComponent}
     // C. Create final output
-        const res = {...contextMock, 'documentComponents':newDocumentComponents,}
+        const res = {...document, 'documentComponents':newDocumentComponents,}
         // console.log(' edit outputr....',util.inspect(res,{ depth: null }))
         return res
     }

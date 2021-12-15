@@ -1,14 +1,13 @@
-import {singleDocument} from '../../importSingleDocument'
 import {authenticatedUser} from '../../dbMockup/authenticatedUser'
 
-const getUsersViewId = () =>{
+const getUsersViewId = (documentState) =>{
     //Helper functions
     const dictionaryItemCount=(dict)=>{
         return Object.keys(dict).length
     }
     // 1. All doc_view_id for current user
         const userId = authenticatedUser.userId
-        const userViewIds = singleDocument.documentUsers[userId].documentViews
+        const userViewIds = documentState.document.documentUsers[userId].documentViews
     // 2. All doc_view_id ids for current document
         const getDocViewIds = (documentViews) =>{
             var res = [];
@@ -17,7 +16,7 @@ const getUsersViewId = () =>{
         }
         return res;
         }
-        const docViewsIds = getDocViewIds(singleDocument.documentViews)
+        const docViewsIds = getDocViewIds(documentState.document.documentViews)
     //3. doc_view_id in user and in document 
         const getUsersView = (docViewsIds, userViewIds) =>{
             for (var i = 0; i < docViewsIds.length; i++) {
@@ -47,7 +46,7 @@ const getComponentLevel = (componentId) =>{
     //   // 1. Get usersViewid
     //   const usersViewId = getUsersViewId()
     //   // 2. Get userView
-    //       const documentViews = singleDocument.documentViews
+    //       const documentViews = documentState.documentViews
     //       const usersView = documentViews[usersViewId]
     //   // 3. Get Components in usersView
     //       var usersViewsComponents = usersView.componentHierachy

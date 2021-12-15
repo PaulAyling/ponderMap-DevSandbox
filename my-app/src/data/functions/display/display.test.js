@@ -1,32 +1,21 @@
-import { singleDocument } from '../../../data/importSingleDocument';
-import {authenticatedUser} from '../../../data/dbMockup/authenticatedUser'
+import { getComponent,getChildrenIds} from './display'
+import {getComponentMock,getChildrenIdsMock} from './displayTestMocks'
+import stateMimic from '../../stateMimic'
 
-// import { getComponent, getChildrenIds} from './display'
-import { getComponent} from './display'
 const util = require('util')
+// console.log('stateMimic:',util.inspect(stateMimic,{ depth: null }))
 
-// FOR TESTING I MUST MIMIC THE STATE FORMAT AS I CANNOT IMPORT CONteXT TO A MODULE
-const stateMimic = {
-    'document':{
-        'header':singleDocument.header,
-        'documentUsers':singleDocument.documentUsers,
-        'documentViews':singleDocument.documentViews, //layout of the components for a given view
-        'documentComponents':singleDocument.documentComponents
-    }, // All components that belong to document}
-    'authenticatedUserId':authenticatedUser.userId,
-}
-console.log('stateMimic:',util.inspect(stateMimic,{ depth: null }))
-
-describe.only('Test', () => {
+describe.only('Display:', () => {
     it('1. getComponent', () => {
         const curComponent = getComponent(1,stateMimic)
-        console.log('1. TEST getComponet:',util.inspect(curComponent,{ depth: null }))
-        expect('').toStrictEqual('');
+        // console.log('1. TEST getComponet:',util.inspect(curComponent,{ depth: null }))
+        // console.log('1. TEST getComponentMock:',util.inspect(getComponentMock,{ depth: null }))
+        expect(curComponent).toStrictEqual(getComponentMock);
     });
     it('2. getChildrenIds', () => {
-         const childrenIds = getChildrenIds(stateMimic)   
-         console.log('2. getChildrenIds:',util.inspect(childrenIds,{ depth: null }))
-          expect('').toStrictEqual('');
+         const childrenIds = getChildrenIds(1,stateMimic)   
+        //  console.log('2. getChildrenIds:',util.inspect(childrenIds,{ depth: null }))
+          expect(childrenIds).toStrictEqual(getChildrenIdsMock);
         });
         
 

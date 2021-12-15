@@ -7,6 +7,7 @@ class newComponent {
         this.imageUrl = imageUrl
         this.notes= notes
         this.allTags = allTags
+        this.versionId = 1
     }
     // create a method to gnerate the new node to add to the database
     newComponentNode(){
@@ -28,10 +29,10 @@ class newComponent {
       //create the node that gets added to the view data
       const res = {
         componentId:this.newId,
+        versionId:this.versionId,
         parentId:this.parentId,
         children:[],
         siblings:[],
-        level:null,
         }
       
       return res

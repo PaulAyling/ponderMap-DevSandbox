@@ -1,6 +1,5 @@
 import { getUsersVersion, getUsersViewId } from '../utils/utils'
 
-
 const util = require('util')
 const getComponent = (componentId,documentState)=>{
     // A. Get data form curent user / current version
@@ -25,9 +24,9 @@ const getComponent = (componentId,documentState)=>{
     }
     const getChildrenIds = (id,documentState)=>{
         // 1. Get usersViewid
-        const usersViewId = getUsersViewId()
+        const usersViewId = getUsersViewId(documentState)
         // 2. Get userView
-            const documentViews = documentState.documentViews
+            const documentViews = documentState.document.documentViews
             const usersView = documentViews[usersViewId]
         // 3. Get Components in usersView
             const usersViewsComponents = usersView.componentHierachy
