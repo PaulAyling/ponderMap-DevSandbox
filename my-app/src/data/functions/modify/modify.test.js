@@ -9,7 +9,7 @@
 const util = require('util')
 var state = {}
 // console.log('stateMimic',util.inspect(stateMimic,{ depth: null }))
-describe.only('MODIFY SUITE', () => {
+describe.skip('MODIFY SUITE', () => {
   it.skip('1 Add ', () => {
   //Create New Object
   const newComp = new newComponent(
@@ -36,7 +36,7 @@ describe.only('MODIFY SUITE', () => {
   it('2 Edit ', () => {
   // //Edit Existing Object
     const newState = edit('title','This title has been updated',1,stateMimic.document)
-    console.log('TEST EDIT Running....',util.inspect(newState,{ depth: null }))
+    // console.log('TEST EDIT Running....',util.inspect(newState,{ depth: null }))
     expect('').toStrictEqual('');
   });
 });

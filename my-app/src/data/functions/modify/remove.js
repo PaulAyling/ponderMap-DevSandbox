@@ -3,6 +3,7 @@ import { arrayRemoveValue } from '../utils/array_fn'
 const util = require('util')
 
 const remove = (componentId,documentState) =>{
+
     // console.log('documentState',util.inspect(documentState.document.documentViews,{ depth: null }))
     // console.log('componentId:',componentId,'documentState:',documentState)
     // A. Create data

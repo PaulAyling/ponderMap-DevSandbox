@@ -1,13 +1,12 @@
-import {authenticatedUser} from '../../dbMockup/authenticatedUser'
-
 const getUsersViewId = (documentState) =>{
     //Helper functions
     const dictionaryItemCount=(dict)=>{
         return Object.keys(dict).length
     }
     // 1. All doc_view_id for current user
-        const userId = authenticatedUser.userId
-        const userViewIds = documentState.document.documentUsers[userId].documentViews
+    const document = documentState.document
+    const userId = documentState.authenticatedUserId
+        const userViewIds = document.documentUsers[userId].documentViews
     // 2. All doc_view_id ids for current document
         const getDocViewIds = (documentViews) =>{
             var res = [];
@@ -16,7 +15,7 @@ const getUsersViewId = (documentState) =>{
         }
         return res;
         }
-        const docViewsIds = getDocViewIds(documentState.document.documentViews)
+        const docViewsIds = getDocViewIds(document.documentViews)
     //3. doc_view_id in user and in document 
         const getUsersView = (docViewsIds, userViewIds) =>{
             for (var i = 0; i < docViewsIds.length; i++) {
@@ -32,44 +31,22 @@ const getUsersViewId = (documentState) =>{
 }
 
 const getUsersVersion = (usersVersionDict) =>{
-    const userId = authenticatedUser.userId
-    for (const [key, value] of Object.entries(usersVersionDict)) {
-        if(key == userId){
-            return value.versionId
-        }
-      }
+    // const userId = authenticatedUser.userId
+    // for (const [key, value] of Object.entries(usersVersionDict)) {
+    //     if(key == userId){
+    //         return value.versionId
+    //     }
+    //   }
 
 }
 
-const getComponentLevel = (componentId) =>{
-    // // A. Get Data
-    //   // 1. Get usersViewid
-    //   const usersViewId = getUsersViewId()
-    //   // 2. Get userView
-    //       const documentViews = documentState.documentViews
-    //       const usersView = documentViews[usersViewId]
-    //   // 3. Get Components in usersView
-    //       var usersViewsComponents = usersView.componentHierachy
-    //       // console.log('usersViewsComponents',usersViewsComponents)    
-    // // B. Calc level
-    //     if(usersViewsComponents[componentId].parentId == null)
-    //     return usersViewsComponents
+const getComponentLevel = (componentId,documentState)=> {
+    const usersViewId =   getUsersViewId(documentState)
+    const userComponenthierachy = documentState.document.documentViews[usersViewId].componentHierachy
+    const curComponentParent = userComponenthierachy[componentId].parentId
+    console.log('curComponentParent',curComponentParent)
 
-
-
-        // else {
-        //     parent1 = usersViewsComponents[componentId].parentId
-        //     if(usersViewsComponents[parent1].parentId == null)
-        //     return 1
-        // }
-        // else {
-        //     parent1 = usersViewsComponents[componentId].parentId
-        //     parent2 = usersViewsComponents[parent1].parentI
-        //     if(usersViewsComponents[parent2].parentId == null)
-        //     return 1
-        // }
-        // return 1
-    // return usersViewsComponents
+    return 1
 }
 
 export {getUsersViewId,getUsersVersion, getComponentLevel}

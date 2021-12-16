@@ -24,7 +24,7 @@ const getComponent = (componentId,documentState)=>{
     }
     const getChildrenIds = (id,documentState)=>{
         // 1. Get usersViewid
-        const usersViewId = getUsersViewId(documentState)
+        const usersViewId = getUsersViewId(documentState.document)
         // 2. Get userView
             const documentViews = documentState.document.documentViews
             const usersView = documentViews[usersViewId]

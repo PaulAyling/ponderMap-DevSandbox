@@ -5,7 +5,7 @@ import stateMimic from '../../stateMimic'
 const util = require('util')
 // console.log('stateMimic:',util.inspect(stateMimic,{ depth: null }))
 
-describe.only('Display:', () => {
+describe.skip('Display:', () => {
     it('1. getComponent', () => {
         const curComponent = getComponent(1,stateMimic)
         // console.log('1. TEST getComponet:',util.inspect(curComponent,{ depth: null }))
