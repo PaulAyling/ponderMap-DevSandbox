@@ -17,4 +17,9 @@
                     Card (B3) 
 
 # Card
-    // 
+    // Create state for managing drill throughs and toggles
+    // load documentContext & load formatting presets
+    RENDER
+        <CardHeader id={props.id}>
+        <CardBody>
+        <CardChildren>
