@@ -40,13 +40,51 @@ const getUsersVersion = (usersVersionDict) =>{
 
 }
 
-const getComponentLevel = (componentId,documentState)=> {
-    const usersViewId =   getUsersViewId(documentState)
-    const userComponenthierachy = documentState.document.documentViews[usersViewId].componentHierachy
-    const curComponentParent = userComponenthierachy[componentId].parentId
-    console.log('curComponentParent',curComponentParent)
+// const getComponentLevel = (componentId,componentHierachy)=> {
+//     // console.log('1. ARG: componentId',componentId)
+//     // console.log('2. ARG: componentHierachy',componentHierachy)
+//     if(componentHierachy[componentId].parentId==null){
+//         print('parent is null') // if the component is apex then return 0
+//         return 0
+//     }
 
-    return 1
+//     // Get 
+//     var count = 0
+//     var currentId = componentId
+//     var currentParentId = componentHierachy[componentId]
+//     // console.log('currentParentId',currentParentId)
+
+    
+//     // console.log('First Parent',componentHierachy[currentId].parentId)
+//     // console.log('Initializations: currentID:',currentId,'currentParent:',currentParentId,'count',count)
+//     while(currentParentId !== null){
+//         count += 1
+//         // console.log('Loops: currentID:',currentId,'currentParent:',currentParentId,'count',count)
+//         currentId = currentParentId
+//         currentParentId = componentHierachy[currentId].currentParentId
+//     }
+
+//     return count
+// }
+const numberOfParents = (componentId,componentHierachy)=> {
+    // console.log('1. ARG: componentId',componentId,'ParentForThat:',componentHierachy[componentId].parentId)
+    var cnt = 0
+    var currentId = componentId
+    var currentParentId = componentHierachy[componentId].parentId
+    // console.log('1. T1: componentId',currentId,'ParentForThat:',currentParentId)
+    if(componentHierachy[componentId].parentId==null){
+        // console.log('parent is null') 
+        return 0
+    }
+    while(currentParentId !== null){
+        cnt += 1
+        // console.log('has a parent','cnt:',cnt)
+        currentId = currentParentId
+        currentParentId = componentHierachy[currentId].parentId
+        
+    }
+    return cnt
 }
 
-export {getUsersViewId,getUsersVersion, getComponentLevel}
+
+export {getUsersViewId,getUsersVersion, numberOfParents}
