@@ -4,9 +4,6 @@ import Tags from '../furniture/tags'
 import Container from './Container'
 import { v4 as uuidv4 } from 'uuid';
 
-
-
-
 function Body(props) {
     //1. Content (If level = word)
     const {id, notes, image_url, bodyOuterStyle,all_tags}  = props.curContainerData

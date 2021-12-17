@@ -5,11 +5,11 @@ import DocumentFooter from './documentFooter'
 
 
 function Document() {
-   
+    const startingId = 1
     return (
         <div>
             <DocumentHeader/>
-            <DocumentBody/>
+            <DocumentBody startingId={startingId}/>
             <DocumentFooter/>
         </div>
         

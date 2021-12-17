@@ -5,6 +5,7 @@ import { add } from '../data/functions/modify/add'
 import { remove } from '../data/functions/modify/remove'
 import { edit } from '../data/functions/modify/edit'
 import {newComponent} from '../data/classes/contextClasses'
+import   { BtnVisable, StyleDefaults } from '../data/settings/cardConfig'
 
 export const DocumentContext = createContext()
 class DocumentContextProvider extends Component{
@@ -19,7 +20,8 @@ class DocumentContextProvider extends Component{
             }, // All components that belong to document}
             'authenticatedUserId':authenticatedUser.userId,
             // 'utils':{newComponent,add,remove,edit}
-            'utils':{add,remove,edit, newComponent}    
+            'utils':{add,remove,edit, newComponent},
+            'settings':  {'btnVisable':BtnVisable, 'styleDefaults':StyleDefaults}
         }
             this.updateState = this.updateState.bind(this);
         }

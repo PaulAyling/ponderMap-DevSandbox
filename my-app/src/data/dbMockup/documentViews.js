@@ -14,19 +14,22 @@ const documentViews =
                 'versionId':1,
                 'parentId':null,
                 'children':[2,3],
-                'siblings':[]                },
+                'siblings':[],
+                'level':'paragraph'},
             2:{
                 'componentId':2,
                 'versionId':1,
                 'parentId':1,
                 'children':[],
-                'siblings':[]                },
+                'siblings':[],
+                'level':'word'},
             3:{
                 'componentId':3,
                 'versionId':1,
                 'parentId':1,
                 'children':[],
-                'siblings':[]                }
+                'siblings':[],
+                'level':'word'}
             },
         },
         2:
@@ -42,14 +45,16 @@ const documentViews =
                    'versionId':1,
                    'parentId':null,
                    'children':[2],
-                   'siblings':[]                },
+                   'siblings':[],
+                   'level':'paragraph'},
                2:   
                {
                    'componentId':2,
                    'versionId':1,
                    'parentId':1,
                    'children':[],
-                   'siblings':[]               }
+                   'siblings':[],
+                   'level':'word'}
            }, 
         },
     }    
