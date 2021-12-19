@@ -1,11 +1,14 @@
+import  { useContext,useState  } from 'react'
+import { DocumentContext } from '../../contexts/DocumentContext'
+import { v4 as uuidv4 } from 'uuid';
  
 
-const CardHeader = ({ onClick, count,singleDocument }) => {
-    console.log('singleDocument:',singleDocument)
+const CardHeader = () => {
+    //style varibles
     return (
-        <button onClick={onClick}>
-        CARD HEADER
-        </button>
+        <div title="placeholder">
+            THIS IS THE CARD HHEADER
+        </div>
     )
     };
   export default CardHeader

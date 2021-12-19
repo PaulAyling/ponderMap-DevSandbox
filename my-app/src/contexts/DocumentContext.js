@@ -1,10 +1,10 @@
 import {createContext, Component } from 'react'
 import {singleDocument} from '../data/importSingleDocument'
 import {authenticatedUser} from '../data/dbMockup/authenticatedUser'
+import {newComponent} from '../data/classes/contextClasses'
 import { add } from '../data/functions/modify/add'
 import { remove } from '../data/functions/modify/remove'
 import { edit } from '../data/functions/modify/edit'
-import {newComponent} from '../data/classes/contextClasses'
 import   { BtnVisable, StyleDefaults } from '../data/settings/cardConfig'
 
 export const DocumentContext = createContext()
