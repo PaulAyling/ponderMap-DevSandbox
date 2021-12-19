@@ -3,6 +3,7 @@ import { DocumentContext } from '../../contexts/DocumentContext'
 import CardHeader from './cardHeader'
 import { v4 as uuidv4 } from 'uuid';
 import { getUsersViewId } from '../../data/functions/utils/utils';
+import { getComponent } from '../../data/functions/display/display'
 
 const Card= (props)=> {
     //1. SETUP CARD STATE   (BUTTON TOGGLES)
@@ -24,17 +25,22 @@ const Card= (props)=> {
         const documentContext = useContext(DocumentContext)
         const usersViewId = getUsersViewId(documentContext)
         const level = documentContext.document.documentViews[usersViewId].componentHierachy[props.id].level
-        const cardStyles = documentContext.settings.styleDefaults[level]
+        const cardSettings = {
+            'cardStyles':documentContext.settings.styleDefaults[level],
+            'cardButtonsVisable':documentContext.settings.buttonsVisable[level],
+        }
+    //3, GET CONTENT
+        const cardContent = getComponent(props.id,documentContext)
         return (
-        <article className = {cardStyles.cardContainer} key={uuidv4()} >
+        <article title={'card ID: '+props.id}className = {cardSettings.cardStyles.cardContainer} key={uuidv4()} >
             <CardHeader 
                 id={props.id}
                 cardState={cardState}
-                cardStyles={cardStyles}
+                cardSettings={cardSettings}
+                cardContent={cardContent}
             />
         </article>
         )
-
   }
 
   export default Card

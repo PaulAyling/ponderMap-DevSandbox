@@ -1,19 +1,12 @@
 import React from 'react'
-import DocumentBody from './documentBody'
-import DocumentHeader from './documentHeader'
-import DocumentFooter from './documentFooter'
+import Card from '../card/card'
 
 
 function Document() {
     const startingId = 1
     return (
-        <div>
-            <DocumentHeader/>
-            <DocumentBody startingId={startingId}/>
-            <DocumentFooter/>
-        </div>
-        
-    )
+        <Card id={startingId}/>
+)
 }
 
 export default Document

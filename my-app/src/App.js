@@ -6,7 +6,7 @@ function App() {
   return (
     <DocumentContextProvider>
     <div className="App">
-      <Document/>
+   <Document/>   
     </div>
     </DocumentContextProvider>
   );

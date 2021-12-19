@@ -1,4 +1,4 @@
-const BtnVisable = {
+const buttonsVisable = {
         'paragraph':{
                 'drag':false,
                 'add':false,
@@ -15,7 +15,7 @@ const BtnVisable = {
         }
     }
 // In time I will depreciate this with tailwind custom components
-const StyleDefaults = {
+const styleDefaults = {
         'paragraph':{
                 'cardContainer':' rounded flex flex-col justify-between p-1 bg-gray-300 text-black',
                 'cardHeaderContainer':'',
@@ -27,4 +27,4 @@ const StyleDefaults = {
                 'cardHeaderText':'text-center font-extralight font-bold text-xl text-decoration: underline text-blue',
         }
 }
-export { BtnVisable, StyleDefaults } 
+export { buttonsVisable, styleDefaults } 
