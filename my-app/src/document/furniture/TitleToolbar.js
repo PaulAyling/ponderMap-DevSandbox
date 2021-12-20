@@ -4,15 +4,14 @@ import BtnUrl from './buttons/Btn_url'
 import BtnShare from './buttons/Btn_share'
 
 function TitleToolbar(props) {
-    const { containerFunctions, containerState,containerData  } = props
     return (
         <div>
-            <BtnAdd containerFunctions =    {containerFunctions} containerState = {containerState} containerData={containerData} />
-            <BtnDelete containerFunctions = {containerFunctions} containerState = {containerState} containerData={containerData} />
-            <BtnUrl containerFunctions =    {containerFunctions} containerState = {containerState} containerData={containerData} />
-            <BtnShare containerFunctions =  {containerFunctions} containerState = {containerState} containerData={containerData} />
-        </div>
-        
+            {/* BUTTONS HAVE NO CAPABILITY YET APART FROM APPEARING AS PER CONFIG */}
+            <BtnAdd cardSettings={props.cardSettings}/>
+            <BtnDelete cardSettings={props.cardSettings}/>
+            <BtnUrl cardSettings={props.cardSettings} />
+            <BtnShare cardSettings={props.cardSettings}/> 
+        </div>  
     )
 }
 

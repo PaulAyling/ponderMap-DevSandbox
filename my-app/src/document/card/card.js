@@ -1,9 +1,9 @@
 import  { useContext,useState  } from 'react'
 import { DocumentContext } from '../../contexts/DocumentContext'
 import CardHeader from './cardHeader'
-import { v4 as uuidv4 } from 'uuid';
 import { getUsersViewId } from '../../data/functions/utils/utils';
 import { getComponent } from '../../data/functions/display/display'
+import { v4 as uuidv4 } from 'uuid';
 
 const Card= (props)=> {
     //1. SETUP CARD STATE   (BUTTON TOGGLES)
@@ -29,7 +29,7 @@ const Card= (props)=> {
             'cardStyles':documentContext.settings.styleDefaults[level],
             'cardButtonsVisable':documentContext.settings.buttonsVisable[level],
         }
-    //3, GET CONTENT
+    //3, GET CARD CONTENT
         const cardContent = getComponent(props.id,documentContext)
         return (
         <article title={'card ID: '+props.id}className = {cardSettings.cardStyles.cardContainer} key={uuidv4()} >

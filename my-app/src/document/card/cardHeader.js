@@ -1,6 +1,8 @@
 import { v4 as uuidv4 } from 'uuid';
 import BtnDragHandle from '../furniture/buttons/Btn_dragHandle'
 import CardTitle from './cardTitle'
+import TilteToolbar from '../furniture/TitleToolbar'
+import TitleToolbar from '../furniture/TitleToolbar';
  
 const CardHeader = (props) => {
     return (
@@ -15,6 +17,10 @@ const CardHeader = (props) => {
                 id={props.id}
                 cardContent={props.cardContent}
                 />
+                <TitleToolbar
+                    id={props.id}
+                    cardState={props.cardState}
+                    cardSettings={props.cardSettings}/>
                 <div>2</div>
             </div>
         </div>

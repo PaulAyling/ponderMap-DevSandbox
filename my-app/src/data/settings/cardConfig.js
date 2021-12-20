@@ -1,14 +1,14 @@
 const buttonsVisable = {
         'paragraph':{
                 'drag':false,
-                'add':false,
+                'add':true,
                 'delete':false,
                 'url':false,
                 'share':false
         },
         'word':{
                 'drag':false,
-                'add':false,
+                'add':true,
                 'delete':false,
                 'url':false,
                 'share':false
