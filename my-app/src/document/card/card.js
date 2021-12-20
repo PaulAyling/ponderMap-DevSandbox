@@ -1,8 +1,9 @@
 import  { useContext,useState  } from 'react'
 import { DocumentContext } from '../../contexts/DocumentContext'
 import CardHeader from './cardHeader'
+import CardBody from '../card/cardBody'
 import { getUsersViewId } from '../../data/functions/utils/utils';
-import { getComponent } from '../../data/functions/display/display'
+import { getComponent, getChildrenIds } from '../../data/functions/display/display'
 import { v4 as uuidv4 } from 'uuid';
 
 const Card= (props)=> {
@@ -24,6 +25,7 @@ const Card= (props)=> {
     //2. GET STYLE DATA
         const documentContext = useContext(DocumentContext)
         const usersViewId = getUsersViewId(documentContext)
+        console.log('ocumentContext.document.documentViews 3',documentContext.document.documentViews[usersViewId].componentHierachy[3].level)
         const level = documentContext.document.documentViews[usersViewId].componentHierachy[props.id].level
         const cardSettings = {
             'cardStyles':documentContext.settings.styleDefaults[level],
@@ -31,6 +33,11 @@ const Card= (props)=> {
         }
     //3, GET CARD CONTENT
         const cardContent = getComponent(props.id,documentContext)
+    //4. GET THE CHHILDREN IDS
+        
+        const childrensIds = getChildrenIds(2, documentContext)
+        console.log('CHILDRENSIDS',childrensIds)
+        
         return (
         <article title={'card ID: '+props.id}className = {cardSettings.cardStyles.cardContainer} key={uuidv4()} >
             <CardHeader 
@@ -39,6 +46,13 @@ const Card= (props)=> {
                 cardSettings={cardSettings}
                 cardContent={cardContent}
             />
+            {/* {showHide ?  
+            <CardBody                   
+                id={props.id}
+                cardState={cardState}
+                cardSettings={cardSettings}
+                cardContent={cardContent}
+                childrensIds={childrensIds}/> : '' } */}
         </article>
         )
   }

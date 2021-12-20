@@ -19,8 +19,11 @@ const getComponent = (componentId,documentState)=>{
         return res  
     }
 const getChildrenIds = (id,documentState)=>{
+    //THIS FUNCTION IS WRONG!!!!!
+    
+
     // 1. Get usersViewid
-    const usersViewId = getUsersViewId(documentState.document)
+    const usersViewId = getUsersViewId(documentState)
     // 2. Get userView
         const documentViews = documentState.document.documentViews
         const usersView = documentViews[usersViewId]
