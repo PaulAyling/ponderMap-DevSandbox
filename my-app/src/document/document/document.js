@@ -3,7 +3,7 @@ import Card from '../card/card'
 
 
 function Document() {
-    const startingId = 3
+    const startingId = 1
     return (
         <Card id={startingId}/>
 )

@@ -3,12 +3,14 @@ import Card from './card'
 
 
 function CardBody(props) {
+    console.log('childrensIds',props.childrensIds)
     const image_style = {
-        backgroundImage: 'url('+ props.cardContent.image_url +')' 
+        backgroundImage: 'url('+ props.cardContent.imageUrl +')' 
       }
+      console.log('image_style',image_style)
       const ChildList = props.childrensIds.map(function(component){
         return (
-        <Card id={component.id} key={uuidv4()}/>
+        <Card id={component} key={uuidv4()}/>
         )
         })
     return (

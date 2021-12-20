@@ -20,17 +20,18 @@ const getComponent = (componentId,documentState)=>{
     }
 const getChildrenIds = (id,documentState)=>{
     //THIS FUNCTION IS WRONG!!!!!
-    
+
 
     // 1. Get usersViewid
     const usersViewId = getUsersViewId(documentState)
+
     // 2. Get userView
         const documentViews = documentState.document.documentViews
         const usersView = documentViews[usersViewId]
     // 3. Get Components in usersView
         const usersViewsComponents = usersView.componentHierachy
     // 4. Get users view of the component
-        const usersViewsComponent = usersViewsComponents[usersViewId]
+        const usersViewsComponent = usersViewsComponents[id]
     // 5. return children
     const res = usersViewsComponent.children
     return res
