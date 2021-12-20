@@ -20,7 +20,7 @@ const getUsersViewId = (documentState) =>{
         const getUsersView = (docViewsIds, userViewIds) =>{
             for (var i = 0; i < docViewsIds.length; i++) {
                 for (var a = 0; a < userViewIds.length; a++) {
-                    if(docViewsIds[i] == userViewIds[a]){
+                    if(docViewsIds[i] === userViewIds[a]){
                         return docViewsIds[i]
                     }
                 }

@@ -1,11 +1,8 @@
 import { getUsersViewId } from '../utils/utils'
 
-const util = require('util')
 const getComponent = (componentId,documentState)=>{
     // A. Get data form curent user / current version
-        const currentUser = documentState.authenticatedUserId
         const curComponent = documentState.document.documentComponents[componentId]
-        const docVersions = curComponent.usersVersion
         const authenticatedUserId = documentState.authenticatedUserId
         const usersVersionId = documentState.document.documentComponents[componentId].usersVersion[authenticatedUserId].versionId
         const currentVersionContent = curComponent.versions[usersVersionId]

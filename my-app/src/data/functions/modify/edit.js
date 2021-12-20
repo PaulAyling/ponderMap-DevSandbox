@@ -1,13 +1,10 @@
-import {singleDocument} from '../../importSingleDocument'
 import { getUsersVersion } from '../utils/utils'
 import { arrayIsValueInArray } from '../utils/array_fn'
 
-const util = require('util')
-const contextMock = singleDocument
-
+// const util = require('util')
 const edit = (fieldToUpdate,newContent,componentId,document) =>{
     const validFieldsToUpdate = ['title','imageUrl','notes']
-    if(arrayIsValueInArray(validFieldsToUpdate,'title') != true){
+    if(arrayIsValueInArray(validFieldsToUpdate,'title') !== true){
         return "Error! Field Name is not valid"
     } else{
     // A. Create the Data

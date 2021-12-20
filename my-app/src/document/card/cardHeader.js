@@ -1,8 +1,8 @@
 import { v4 as uuidv4 } from 'uuid';
 import BtnDragHandle from '../furniture/buttons/Btn_dragHandle'
 import CardTitle from './cardTitle'
-import TilteToolbar from '../furniture/TitleToolbar'
 import TitleToolbar from '../furniture/TitleToolbar';
+import BtnShowHide from '../furniture/buttons/Btn_showHide'
  
 const CardHeader = (props) => {
     return (
@@ -21,8 +21,11 @@ const CardHeader = (props) => {
                     id={props.id}
                     cardState={props.cardState}
                     cardSettings={props.cardSettings}/>
-                <div>2</div>
             </div>
+            <BtnShowHide
+                cardState={props.cardState}
+            />
+
         </div>
     )
     };

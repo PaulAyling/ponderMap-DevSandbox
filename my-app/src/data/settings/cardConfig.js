@@ -1,7 +1,7 @@
 const buttonsVisable = {
         'paragraph':{
                 'drag':false,
-                'add':true,
+                'add':false,
                 'delete':false,
                 'url':false,
                 'share':false
