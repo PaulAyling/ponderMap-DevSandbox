@@ -17,14 +17,15 @@ function CardTitle(props) {
 		inputBox.current.focus()
 	  }, []);
 
-      const modifyItem = (event,name,id,docComponents) =>{
+      const modifyItem = (event,name,id,cardContent) =>{
         event.preventDefault();
         // edit('title','This title has been updated',1,stateMimic.document)
-        console.log('event.target.value',event.target.value)
-        console.log('name',name)
-        console.log('id',id)
-        console.log('docComponents  ',docComponents)
-        // const newComponent = edit(cardContent,event.target.value,'title')
+        // console.log('event.target.value',event.target.value)
+        // console.log('name',name)
+        // console.log('id',id)
+        // console.log('cardContent:  ',cardContent)
+        const newComponent = edit(cardContent,event.target.value,'title')
+        console.log('newComponent',newComponent)
         //Update state with new value 1qp2Q
 
     
@@ -35,7 +36,6 @@ const handleSubmit = (event) => {
         console.log('handlesubmit initiated xxxx',event.target)
         console.log('This is where the database will get written to')
     }; 
-    console.log('cardContent',cardContent)
 return (
     <form
     onSubmit={handleSubmit} key={uuidv4()}>
@@ -48,7 +48,8 @@ return (
                     modifyItem(
                         event,
                         'title',
-                        cardContent.componentId,                        cardContent.docComponents
+                        cardContent.componentId,                        
+                        cardContent
 
                     );
                 }}
