@@ -13,22 +13,22 @@ const documentViews =
                 'componentId':1,
                 'versionId':1,
                 'parentId':null,
-                'children':[2,3],
-                'siblings':[],
+                'children':[2,3],   //this filed is obsolete left in for checking
+                'siblings':[], //this filed is obsolete left in to remoind me about this feature
                 'level':'paragraph'},
             2:{
                 'componentId':2,
                 'versionId':1,
                 'parentId':1,
-                'children':[],
-                'siblings':[],
+                'children':[], //this filed is obsolete left in for checking
+                'siblings':[], //this filed is obsolete left in for checking
                 'level':'word'},
             3:{
                 'componentId':3,
                 'versionId':1,
                 'parentId':1,
-                'children':[],
-                'siblings':[],
+                'children':[], //this filed is obsolete left in for checking
+                'siblings':[], //this filed is obsolete left in for checking
                 'level':'word'}
             },
         },
@@ -44,16 +44,16 @@ const documentViews =
                    'componentId':1,
                    'versionId':1,
                    'parentId':null,
-                   'children':[2],
-                   'siblings':[],
+                   'children':[2], //this filed is obsolete left in for checking
+                   'siblings':[], //this filed is obsolete left in for checking
                    'level':'paragraph'},
                2:   
                {
                    'componentId':2,
                    'versionId':1,
                    'parentId':1,
-                   'children':[],
-                   'siblings':[],
+                   'children':[], //this filed is obsolete left in for checking
+                   'siblings':[], //this filed is obsolete left in for checking
                    'level':'word'}
            }, 
         },

@@ -25,7 +25,7 @@ const getChildrenIds = (id,documentState)=>{
         const usersViewId = getUsersViewId(documentState)
     // get the correct component hierachy
         const componentView = documentState.document.documentViews[usersViewId].componentHierachy
-    // Find the parents in the hierachy
+    // Find the children in the hierachy
         const res = filterDict(componentView,1,"parentId", "componentId")
     return res
 
