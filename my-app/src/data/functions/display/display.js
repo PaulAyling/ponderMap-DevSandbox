@@ -1,4 +1,5 @@
 import { getUsersViewId } from '../utils/utils'
+import { filterDict } from '../utils/dict_fn'
 
 const getComponent = (componentId,documentState)=>{
     // A. Get data form curent user / current version
@@ -18,23 +19,21 @@ const getComponent = (componentId,documentState)=>{
         }
         return res  
     }
+
 const getChildrenIds = (id,documentState)=>{
-    //THIS FUNCTION IS WRONG!!!!!
-
-
-    // 1. Get usersViewid
-    const usersViewId = getUsersViewId(documentState)
-
-    // 2. Get userView
-        const documentViews = documentState.document.documentViews
-        const usersView = documentViews[usersViewId]
-    // 3. Get Components in usersView
-        const usersViewsComponents = usersView.componentHierachy
-    // 4. Get users view of the component
-        const usersViewsComponent = usersViewsComponents[id]
-    // 5. return children
-    const res = usersViewsComponent.children
+    // get the correct view for the user
+        const usersViewId = getUsersViewId(documentState)
+    // get the correct component hierachy
+        const componentView = documentState.document.documentViews[usersViewId].componentHierachy
+    // Find the parents in the hierachy
+        const res = filterDict(componentView,1,"parentId", "componentId")
     return res
+
+
+
+
+  
 }
+
 
 export { getComponent, getChildrenIds}

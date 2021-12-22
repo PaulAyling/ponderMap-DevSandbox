@@ -1,5 +1,5 @@
 import { getComponent,getChildrenIds} from './display'
-import {getComponentMock,getChildrenIdsMock} from './displayTestMocks'
+import {getComponentMock} from './displayTestMocks'
 import stateMimic from '../../stateMimic'
 
 const util = require('util')
@@ -15,7 +15,7 @@ describe.only('Display:', () => {
     it('2. getChildrenIds', () => {
          const childrenIds = getChildrenIds(1,stateMimic)   
         //  console.log('2. getChildrenIds:',util.inspect(childrenIds,{ depth: null }))
-          expect(childrenIds).toStrictEqual(getChildrenIdsMock);
+          expect([2,3]).toStrictEqual(childrenIds);
         });
         
 

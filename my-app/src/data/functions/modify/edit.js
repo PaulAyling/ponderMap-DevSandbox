@@ -3,6 +3,10 @@ import { arrayIsValueInArray } from '../utils/array_fn'
 
 // const util = require('util')
 const edit = (fieldToUpdate,newContent,componentId,document) =>{
+    console.log('EDIT FN:fieldToUpdate',fieldToUpdate,)
+    console.log('EDIT FN:newContent',newContent)
+    console.log('EDIT FN:componentId',componentId)
+    console.log('EDIT FN:document',document)
     const validFieldsToUpdate = ['title','imageUrl','notes']
     if(arrayIsValueInArray(validFieldsToUpdate,'title') !== true){
         return "Error! Field Name is not valid"
