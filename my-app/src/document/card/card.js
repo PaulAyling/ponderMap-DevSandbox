@@ -8,30 +8,32 @@ import { v4 as uuidv4 } from 'uuid';
 
 const Card= (props)=> {
     //1. SETUP CARD STATE   (BUTTON TOGGLES)
-        const [showHide, setshowHide] = useState(false);
-        const [showDrag, setShowDrag] = useState(false);
-        const showHide_fn_tgl = (prop) => {
-            setshowHide(prevState => !prevState);
-        }
-        const showDrag_fn_tgl = (prop) => {
-            setShowDrag(prevState => !prevState);
-        }
-        const cardState = {
-            showHide,
-            showHide_fn_tgl,
-            showDrag,
-            showDrag_fn_tgl
-        }
+    const [showHide, setshowHide] = useState(false);
+    const [showDrag, setShowDrag] = useState(false);
+    
+    const showHide_fn_tgl = (prop) => {
+        setshowHide(prevState => !prevState);
+    }
+    const showDrag_fn_tgl = (prop) => {
+        setShowDrag(prevState => !prevState);
+    }
+    const cardState = {
+        showHide,
+        showHide_fn_tgl,
+        showDrag,
+        showDrag_fn_tgl
+    }
     //2. GET STYLE DATA
-        const documentContext = useContext(DocumentContext)
-        const usersViewId = getUsersViewId(documentContext)
-        const level = documentContext.document.documentViews[usersViewId].componentHierachy[props.id].level
-        const cardSettings = {
-            'cardStyles':documentContext.settings.styleDefaults[level],
-            'cardButtonsVisable':documentContext.settings.buttonsVisable[level],
-        }
+    const documentContext = useContext(DocumentContext)
+    const usersViewId = getUsersViewId(documentContext)
+    const level = documentContext.document.documentViews[usersViewId].componentHierachy[props.id].level
+    const cardSettings = {
+        'cardStyles':documentContext.settings.styleDefaults[level],
+        'cardButtonsVisable':documentContext.settings.buttonsVisable[level],
+    }
     //3, GET CARD CONTENT
         const cardContent = getComponent(props.id,documentContext)
+    
     //4. GET THE CHHILDREN IDS
         
         const childrensIds = getChildrenIds(props.id, documentContext)
@@ -44,6 +46,9 @@ const Card= (props)=> {
                 cardSettings={cardSettings}
                 cardContent={cardContent}
             />
+             {/* <button onClick={setTitleFn()}> 
+          Click me!
+        </button>  */}
             {showHide ?  
             <CardBody                   
                 id={props.id}

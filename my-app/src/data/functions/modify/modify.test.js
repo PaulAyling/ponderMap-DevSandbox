@@ -4,7 +4,7 @@
  import { v4 as uuidv4 } from 'uuid';
  import { newComponent } from '../../classes/contextClasses'
  import stateMimic from '../../stateMimic';
- import {addMock } from './modifyTestMocks'
+ import {addMock, editMockCardContent } from './modifyTestMocks'
 
 const util = require('util')
 var state = {}
@@ -34,9 +34,9 @@ describe.skip('MODIFY SUITE', () => {
     expect('').toStrictEqual('');
   });
   it('2 Edit ', () => {
-  // //Edit Existing Object
-    const newState = edit('title','This title has been updated',1,stateMimic.document)
-    // console.log('TEST EDIT Running....',util.inspect(newState,{ depth: null }))
+
+    const res = edit('title','Splendid new title',1,editMockCardContent)
+    console.log('TEST EDIT Running....',util.inspect(res,{ depth: null }))
     expect('').toStrictEqual('');
   });
 });

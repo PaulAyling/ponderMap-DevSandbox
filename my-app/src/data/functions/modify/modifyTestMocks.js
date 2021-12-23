@@ -138,7 +138,17 @@ const addMock ={
   }
 }
 
+const editMockCardContent = {
+  allTags: [ "lesiure", "sport", "machines" ],
+  componentId: 1,
+  imageUrl: "https://bikexchange.com/wp-content/uploads/2020/12/bikes1212-e1630349513789.png",
+  notes: "tbc",
+  title: "About Bicycles",
+  url: "tbc"
+}
+
+
   const removeMock = {
 
   }
-  export {addMock, removeMock}
+  export {addMock, removeMock,editMockCardContent}

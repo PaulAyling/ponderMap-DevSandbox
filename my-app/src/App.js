@@ -1,6 +1,7 @@
 import './App.css';
 import DocumentContextProvider from './contexts/DocumentContext'
 import Document from './document/document/document'
+import UseStateEx from './document/scratch/useStateEx';
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
    <Document/>   
     </div>
     </DocumentContextProvider>
+    // <UseStateEx/>
   );
 }
 

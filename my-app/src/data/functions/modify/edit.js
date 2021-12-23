@@ -1,17 +1,23 @@
 import { getUsersVersion } from '../utils/utils'
 import { arrayIsValueInArray } from '../utils/array_fn'
+import { filterDict } from '../utils/dict_fn'
 
 // const util = require('util')
-const edit = (fieldToUpdate,newContent,componentId,document) =>{
-    console.log('EDIT FN:fieldToUpdate',fieldToUpdate,)
-    console.log('EDIT FN:newContent',newContent)
+const edit = (field,newFieldValue,componentId,cardContent) =>{
+    console.log('EDIT FN:fieldToUpdate',field,)
+    console.log('EDIT FN:newContent',newFieldValue)
     console.log('EDIT FN:componentId',componentId)
-    console.log('EDIT FN:document',document)
+    console.log('EDIT FN:document',cardContent)
     const validFieldsToUpdate = ['title','imageUrl','notes']
     if(arrayIsValueInArray(validFieldsToUpdate,'title') !== true){
         return "Error! Field Name is not valid"
     } else{
-        
+
+        const res = {
+            ...cardContent,
+            [field]:newFieldValue
+        }
+        return res
 
 
 
